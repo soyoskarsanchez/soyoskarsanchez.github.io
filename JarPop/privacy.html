@@ -1,52 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JarPop · Política de Privacidad / Privacy Policy</title>
-<meta name="description" content="Política de privacidad del juego JarPop para Android. Privacy policy for the JarPop Android game.">
+<title>JarPop · Privacy Policy</title>
+<meta name="description" content="Privacy policy for the JarPop Android game, available in 15 languages.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1d2540;
-    --ink-soft: #4a5370;
-    --bg: #f3f7fc;
-    --paper: #ffffff;
-    --line: #d9e2ef;
-    --berry: #e23d6d;
-    --lime: #7cc63e;
-    --sky: #2f8fe0;
-    --sun: #f5b82e;
-    --grape: #8a52d6;
+    --ink: #1d2540; --ink-soft: #4a5370; --bg: #f3f7fc; --paper: #ffffff; --line: #d9e2ef;
+    --berry: #e23d6d; --lime: #7cc63e; --sky: #2f8fe0; --sun: #f5b82e; --grape: #8a52d6;
+    --body-font: "Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+    --head-font: "Baloo 2", "Segoe UI", Roboto, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e8ecf6;
-      --ink-soft: #aab3cc;
-      --bg: #141a2b;
-      --paper: #1c2337;
-      --line: #2e3854;
-    }
+    :root { --ink: #e8ecf6; --ink-soft: #aab3cc; --bg: #141a2b; --paper: #1c2337; --line: #2e3854; }
+  }
+  html:is([lang="ja"],[lang="ko"],[lang="zh-CN"],[lang="zh-TW"],[lang="ru"],[lang="hi"],[lang="ar"]) {
+    --body-font: system-ui, "Segoe UI", "Noto Sans", Roboto, sans-serif;
+    --head-font: system-ui, "Segoe UI", "Noto Sans", Roboto, sans-serif;
   }
   * { box-sizing: border-box; }
   html { color-scheme: light dark; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.65;
-  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body-font); font-size: 1.0625rem; line-height: 1.7; }
   .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
   header { padding: 2.5rem 0 1.5rem; }
   .marbles { display: flex; gap: .45rem; margin-bottom: 1.25rem; }
-  .marbles span {
-    width: 1.35rem; height: 1.35rem; border-radius: 50%;
-    box-shadow: inset -3px -4px 0 rgba(0,0,0,.18), inset 3px 3px 0 rgba(255,255,255,.35);
-  }
+  .marbles span { width: 1.35rem; height: 1.35rem; border-radius: 50%;
+    box-shadow: inset -3px -4px 0 rgba(0,0,0,.18), inset 3px 3px 0 rgba(255,255,255,.35); }
   .marbles span:nth-child(1) { background: var(--berry); }
   .marbles span:nth-child(2) { background: var(--sun); }
   .marbles span:nth-child(3) { background: var(--lime); }
@@ -61,25 +44,23 @@
     @keyframes drop { from { transform: translateY(-2rem); opacity: 0; } to { transform: none; opacity: 1; } }
   }
   .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
-  h1, h2 { font-family: "Baloo 2", "Segoe UI", sans-serif; line-height: 1.15; }
+  h1, h2 { font-family: var(--head-font); line-height: 1.2; }
   h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 800; margin: 0; }
   .meta { color: var(--ink-soft); margin: .35rem 0 0; font-size: .95rem; }
-  .lang { display: inline-flex; border: 2px solid var(--line); border-radius: 999px; padding: 3px; background: var(--paper); }
-  .lang button {
-    font: inherit; font-weight: 700; font-size: .9rem;
-    border: 0; background: transparent; color: var(--ink-soft);
-    padding: .35rem .9rem; border-radius: 999px; cursor: pointer;
+  .lang select {
+    font: inherit; font-family: system-ui, "Segoe UI", Roboto, sans-serif; font-weight: 700; font-size: .95rem;
+    color: var(--ink); background: var(--paper); border: 2px solid var(--line); border-radius: 999px;
+    padding: .45rem 1rem; cursor: pointer;
   }
-  .lang button[aria-pressed="true"] { background: var(--sky); color: #fff; }
-  .lang button:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+  .lang select:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   main { background: var(--paper); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.5rem 1.5rem 2rem; margin-bottom: 2rem; }
   @media (min-width: 640px) { main { padding: 2rem 2.5rem 2.5rem; } }
-  .summary { border-left: 5px solid var(--lime); padding: .25rem 0 .25rem 1rem; margin: 0 0 1.5rem; }
+  .summary { border-inline-start: 5px solid var(--lime); padding-block: .25rem; padding-inline-start: 1rem; margin: 0 0 1.5rem; }
   h2 { font-size: 1.4rem; font-weight: 800; margin: 2rem 0 .5rem; }
-  h2:first-of-type { margin-top: .5rem; }
-  ul { padding-left: 1.25rem; }
+  ul { padding-inline-start: 1.25rem; }
   li { margin: .3rem 0; }
-  a { color: var(--sky); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+  a { color: var(--sky); text-decoration-thickness: 2px; text-underline-offset: 2px; overflow-wrap: anywhere; }
   footer { color: var(--ink-soft); font-size: .9rem; padding-bottom: 2.5rem; }
   [hidden] { display: none !important; }
 </style>
@@ -90,167 +71,291 @@
     <div class="marbles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
     <div class="top">
       <div>
-        <h1 data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
-        <p class="meta" data-es="JarPop · Última actualización: 22 de noviembre de 2026" data-en="JarPop · Last updated: November 22, 2026">JarPop · Última actualización: 22 de noviembre de 2026</p>
+        <h1 id="t">Privacy Policy</h1>
+        <p class="meta" id="u">JarPop · Last updated: November 22, 2026</p>
       </div>
-      <div class="lang" role="group" aria-label="Idioma / Language">
-        <button type="button" data-set="es" aria-pressed="true">Español</button>
-        <button type="button" data-set="en" aria-pressed="false">English</button>
+      <div class="lang">
+        <label class="sr" for="langSel">Language</label>
+        <select id="langSel">
+          <option value="en" lang="en">English</option>
+          <option value="es" lang="es">Español</option>
+          <option value="pt" lang="pt">Português</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="it" lang="it">Italiano</option>
+          <option value="ja" lang="ja">日本語</option>
+          <option value="ko" lang="ko">한국어</option>
+          <option value="zh-CN" lang="zh-CN">简体中文</option>
+          <option value="zh-TW" lang="zh-TW">繁體中文</option>
+          <option value="ru" lang="ru">Русский</option>
+          <option value="id" lang="id">Bahasa Indonesia</option>
+          <option value="tr" lang="tr">Türkçe</option>
+          <option value="hi" lang="hi">हिन्दी</option>
+          <option value="ar" lang="ar">العربية</option>
+        </select>
       </div>
     </div>
   </header>
 
-  <!-- ===================== ESPAÑOL ===================== -->
-  <main id="es" lang="es">
-    <p class="summary"><strong>En resumen:</strong> JarPop no te pide crear una cuenta y no guarda tus datos personales en servidores propios. Tu progreso se guarda solo en tu teléfono. Los anuncios los muestra Google AdMob y las compras las procesa Google Play.</p>
-
-    <h2>Quién es el responsable</h2>
-    <p>JarPop es un juego para Android desarrollado por Oscar Sanchez (SoyOskarSanchez), desarrollador independiente. Para cualquier duda sobre esta política puedes escribir a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
-
-    <h2>Datos que se guardan en tu dispositivo</h2>
-    <p>Tu progreso en el juego, monedas, vidas y configuración (por ejemplo, idioma y sonido) se guardan únicamente en el almacenamiento local de tu teléfono. Nosotros no recibimos ni tenemos acceso a esa información. Si desinstalas el juego o borras sus datos desde los ajustes de Android, esa información se elimina por completo y no se puede recuperar.</p>
-
-    <h2>Publicidad (Google AdMob)</h2>
-    <p>JarPop muestra anuncios intersticiales (de pantalla completa) y anuncios recompensados (que eliges ver a cambio de un premio) mediante Google AdMob, un servicio de Google LLC. Para mostrar y medir los anuncios, Google puede recopilar automáticamente datos como:</p>
-    <ul>
-      <li>El identificador de publicidad de tu dispositivo (ID de publicidad de Android).</li>
-      <li>Tu dirección IP y una ubicación aproximada derivada de ella.</li>
-      <li>Información técnica del dispositivo, como modelo, sistema operativo e idioma.</li>
-      <li>Interacciones con los anuncios, como cuáles se vieron o tocaron.</li>
-    </ul>
-    <p>Estos datos los trata Google según su propia política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a> y <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cómo usa Google la información de las apps que usan sus servicios</a>.</p>
-
-    <h2>Consentimiento en Europa y Reino Unido</h2>
-    <p>Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, la primera vez que abras el juego verás un formulario de consentimiento de Google (UMP). Ahí decides si aceptas anuncios personalizados o solo anuncios no personalizados. No se cargan anuncios antes de que respondas. Puedes cambiar tu decisión en cualquier momento desde la opción de privacidad en Ajustes dentro del juego.</p>
-    <p>También puedes restablecer o eliminar tu ID de publicidad desde los ajustes de Android (Configuración → Privacidad → Anuncios, o Configuración → Google → Anuncios, según tu teléfono).</p>
-
-    <h2>Compras dentro del juego (Google Play)</h2>
-    <p>JarPop ofrece paquetes de monedas, una compra única para quitar los anuncios y una suscripción mensual llamada JarPop Pro. Todos los pagos los procesa Google Play. Nosotros nunca vemos ni guardamos tu número de tarjeta ni otros datos de pago; solo recibimos de Google la confirmación de que la compra se realizó, para poder entregarte lo que compraste. Puedes administrar o cancelar la suscripción desde la app de Google Play (Perfil → Pagos y suscripciones → Suscripciones). Los datos de la compra se rigen por las <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">condiciones de privacidad de Google Payments</a>.</p>
-
-    <h2>Base legal (RGPD)</h2>
-    <ul>
-      <li><strong>Anuncios personalizados:</strong> tu consentimiento, que puedes retirar en cualquier momento.</li>
-      <li><strong>Anuncios no personalizados y medición básica:</strong> el interés legítimo de mantener el juego gratuito.</li>
-      <li><strong>Compras:</strong> la ejecución del contrato de compra que haces con nosotros a través de Google Play.</li>
-    </ul>
-
-    <h2>Tus derechos</h2>
-    <p>Si vives en la Unión Europea, el Reino Unido u otro lugar con leyes similares, tienes derecho a acceder a tus datos, corregirlos, pedir que se eliminen, oponerte a su tratamiento, pedir su portabilidad y retirar tu consentimiento. Como nosotros no guardamos datos personales tuyos en servidores propios:</p>
-    <ul>
-      <li>Para borrar tus datos del juego, desinstálalo o borra sus datos desde los ajustes de Android.</li>
-      <li>Para retirar o cambiar tu consentimiento de anuncios, usa la opción de privacidad en Ajustes del juego.</li>
-      <li>Para los datos que tratan Google AdMob o Google Play, puedes ejercer tus derechos directamente con Google en <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.</li>
-    </ul>
-    <p>Si tienes otra solicitud, escríbenos a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> y te responderemos en un plazo máximo de 30 días. También tienes derecho a presentar una reclamación ante la autoridad de protección de datos de tu país.</p>
-
-    <h2>Transferencias internacionales</h2>
-    <p>Google puede tratar los datos de anuncios y compras en servidores ubicados fuera de tu país, incluido Estados Unidos, con las garantías que exige la ley, como las cláusulas contractuales tipo de la Comisión Europea.</p>
-
-    <h2>Menores de edad</h2>
-    <p>JarPop no está dirigido a menores de 13 años y no recopilamos a sabiendas datos de menores de esa edad. En la Unión Europea, los menores de 16 años (o de la edad que fije cada país) necesitan el permiso de su madre, padre o tutor para aceptar anuncios personalizados. Si crees que un menor nos ha proporcionado datos, escríbenos y los eliminaremos.</p>
-
-    <h2>Seguridad</h2>
-    <p>La información del juego permanece en tu dispositivo y la que trata Google está protegida por sus propias medidas de seguridad. Te recomendamos mantener tu teléfono actualizado y protegido con bloqueo de pantalla.</p>
-
-    <h2>Cambios a esta política</h2>
-    <p>Si cambiamos esta política, publicaremos la nueva versión en esta misma página y actualizaremos la fecha de arriba. Si el cambio es importante, también lo avisaremos dentro del juego.</p>
-
-    <h2>Contacto</h2>
-    <p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
-  </main>
-
-  <!-- ===================== ENGLISH ===================== -->
-  <main id="en" lang="en" hidden>
+  <main id="m-en" lang="en">
     <p class="summary"><strong>In short:</strong> JarPop doesn’t ask you to create an account and doesn’t store your personal data on our own servers. Your progress is saved only on your phone. Ads are served by Google AdMob and purchases are processed by Google Play.</p>
-
-    <h2>Who is responsible</h2>
-    <p>JarPop is an Android game developed by Oscar Sanchez (SoyOskarSanchez), an independent developer. For any question about this policy, write to <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
-
-    <h2>Data stored on your device</h2>
-    <p>Your game progress, coins, lives and settings (for example, language and sound) are stored only in your phone’s local storage. We don’t receive or have access to that information. If you uninstall the game or clear its data from Android settings, that information is deleted completely and can’t be recovered.</p>
-
-    <h2>Advertising (Google AdMob)</h2>
-    <p>JarPop shows interstitial (full-screen) ads and rewarded ads (which you choose to watch in exchange for a reward) through Google AdMob, a service of Google LLC. To serve and measure ads, Google may automatically collect data such as:</p>
-    <ul>
-      <li>Your device’s advertising identifier (Android Advertising ID).</li>
-      <li>Your IP address and an approximate location derived from it.</li>
-      <li>Technical device information, such as model, operating system and language.</li>
-      <li>Ad interactions, such as which ads were viewed or tapped.</li>
-    </ul>
-    <p>Google processes this data under its own policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
-
-    <h2>Consent in Europe and the UK</h2>
-    <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the first time you open the game you’ll see a Google consent form (UMP). There you choose whether to allow personalized ads or only non-personalized ads. No ads load before you answer. You can change your choice at any time from the privacy option in the game’s Settings.</p>
-    <p>You can also reset or delete your advertising ID from Android settings (Settings → Privacy → Ads, or Settings → Google → Ads, depending on your phone).</p>
-
-    <h2>In-game purchases (Google Play)</h2>
-    <p>JarPop offers coin packs, a one-time purchase to remove ads, and a monthly subscription called JarPop Pro. All payments are processed by Google Play. We never see or store your card number or other payment details; we only receive confirmation from Google that the purchase was made, so we can deliver what you bought. You can manage or cancel the subscription in the Google Play app (Profile → Payments &amp; subscriptions → Subscriptions). Purchase data is governed by the <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">Google Payments Privacy Notice</a>.</p>
-
-    <h2>Legal basis (GDPR)</h2>
-    <ul>
-      <li><strong>Personalized ads:</strong> your consent, which you can withdraw at any time.</li>
-      <li><strong>Non-personalized ads and basic measurement:</strong> our legitimate interest in keeping the game free.</li>
-      <li><strong>Purchases:</strong> performance of the purchase contract you make with us through Google Play.</li>
-    </ul>
-
-    <h2>Your rights</h2>
-    <p>If you live in the European Union, the United Kingdom or another place with similar laws, you have the right to access, correct and delete your data, to object to its processing, to data portability, and to withdraw your consent. Because we don’t store your personal data on our own servers:</p>
-    <ul>
-      <li>To delete your game data, uninstall the game or clear its data from Android settings.</li>
-      <li>To withdraw or change your ad consent, use the privacy option in the game’s Settings.</li>
-      <li>For data processed by Google AdMob or Google Play, you can exercise your rights directly with Google in <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">your Google Account</a>.</li>
-    </ul>
-    <p>For any other request, email <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> and we’ll reply within 30 days. You also have the right to lodge a complaint with the data protection authority in your country.</p>
-
-    <h2>International transfers</h2>
-    <p>Google may process ad and purchase data on servers outside your country, including the United States, with the safeguards required by law, such as the European Commission’s Standard Contractual Clauses.</p>
-
-    <h2>Children</h2>
-    <p>JarPop is not directed to children under 13, and we don’t knowingly collect data from children under that age. In the European Union, minors under 16 (or the age set by each country) need permission from a parent or guardian to allow personalized ads. If you believe a child has given us data, write to us and we’ll delete it.</p>
-
-    <h2>Security</h2>
-    <p>Game information stays on your device, and the data processed by Google is protected by Google’s own security measures. We recommend keeping your phone updated and protected with a screen lock.</p>
-
-    <h2>Changes to this policy</h2>
-    <p>If we change this policy, we’ll post the new version on this page and update the date at the top. If the change is significant, we’ll also let you know inside the game.</p>
-
-    <h2>Contact</h2>
-    <p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+    <h2>Who is responsible</h2><p>JarPop is an Android game developed by Oscar Sanchez (SoyOskarSanchez), an independent developer. For any question about this policy, write to <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Data stored on your device</h2><p>Your game progress, coins, lives and settings (for example, language and sound) are stored only in your phone’s local storage. We don’t receive or have access to that information. If you uninstall the game or clear its data from Android settings, that information is deleted completely and can’t be recovered.</p>
+    <h2>Advertising (Google AdMob)</h2><p>JarPop shows interstitial (full-screen) ads and rewarded ads (which you choose to watch in exchange for a reward) through Google AdMob, a service of Google LLC. To serve and measure ads, Google may automatically collect data such as:</p><ul><li>Your device’s advertising identifier (Android Advertising ID).</li><li>Your IP address and an approximate location derived from it.</li><li>Technical device information, such as model, operating system and language.</li><li>Ad interactions, such as which ads were viewed or tapped.</li></ul><p>Google processes this data under its own policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
+    <h2>Consent in Europe and the UK</h2><p>If you are in the European Economic Area, the United Kingdom or Switzerland, the first time you open the game you’ll see a Google consent form (UMP). There you choose whether to allow personalized ads or only non-personalized ads. No ads load before you answer. You can change your choice at any time from the privacy option in the game’s Settings.</p><p>You can also reset or delete your advertising ID from Android settings (Settings → Privacy → Ads, or Settings → Google → Ads, depending on your phone).</p>
+    <h2>In-game purchases (Google Play)</h2><p>JarPop offers coin packs, a one-time purchase to remove ads, and a monthly subscription called JarPop Pro. All payments are processed by Google Play. We never see or store your card number or other payment details; we only receive confirmation from Google that the purchase was made, so we can deliver what you bought. You can manage or cancel the subscription in the Google Play app (Profile → Payments &amp; subscriptions → Subscriptions). Purchase data is governed by the <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google Payments Privacy Notice</a>.</p>
+    <h2>Legal basis (GDPR)</h2><ul><li><strong>Personalized ads:</strong> your consent, which you can withdraw at any time.</li><li><strong>Non-personalized ads and basic measurement:</strong> our legitimate interest in keeping the game free.</li><li><strong>Purchases:</strong> performance of the purchase contract you make with us through Google Play.</li></ul>
+    <h2>Your rights</h2><p>If you live in the European Union, the United Kingdom or another place with similar laws, you have the right to access, correct and delete your data, to object to its processing, to data portability, and to withdraw your consent. Because we don’t store your personal data on our own servers:</p><ul><li>To delete your game data, uninstall the game or clear its data from Android settings.</li><li>To withdraw or change your ad consent, use the privacy option in the game’s Settings.</li><li>For data processed by Google AdMob or Google Play, you can exercise your rights directly with Google in <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">your Google Account</a>.</li></ul><p>For any other request, email <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> and we’ll reply within 30 days. You also have the right to lodge a complaint with the data protection authority in your country.</p>
+    <h2>International transfers</h2><p>Google may process ad and purchase data on servers outside your country, including the United States, with the safeguards required by law, such as the European Commission’s Standard Contractual Clauses.</p>
+    <h2>Children</h2><p>JarPop is not directed to children under 13, and we don’t knowingly collect data from children under that age. In the European Union, minors under 16 (or the age set by each country) need permission from a parent or guardian to allow personalized ads. If you believe a child has given us data, write to us and we’ll delete it.</p>
+    <h2>Security</h2><p>Game information stays on your device, and the data processed by Google is protected by Google’s own security measures. We recommend keeping your phone updated and protected with a screen lock.</p>
+    <h2>Changes to this policy</h2><p>If we change this policy, we’ll post the new version on this page and update the date at the top. If the change is significant, we’ll also let you know inside the game.</p>
+    <h2>Contact</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
   </main>
-
-  <footer>
-    <p>© 2026 Oscar Sanchez · JarPop</p>
-  </footer>
+  <main id="m-es" lang="es" hidden>
+    <p class="summary"><strong>En resumen:</strong> JarPop no te pide crear una cuenta y no guarda tus datos personales en servidores propios. Tu progreso se guarda solo en tu teléfono. Los anuncios los muestra Google AdMob y las compras las procesa Google Play.</p>
+    <h2>Quién es el responsable</h2><p>JarPop es un juego para Android desarrollado por Oscar Sanchez (SoyOskarSanchez), desarrollador independiente. Para cualquier duda sobre esta política puedes escribir a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Datos que se guardan en tu dispositivo</h2><p>Tu progreso en el juego, monedas, vidas y configuración (por ejemplo, idioma y sonido) se guardan únicamente en el almacenamiento local de tu teléfono. Nosotros no recibimos ni tenemos acceso a esa información. Si desinstalas el juego o borras sus datos desde los ajustes de Android, esa información se elimina por completo y no se puede recuperar.</p>
+    <h2>Publicidad (Google AdMob)</h2><p>JarPop muestra anuncios intersticiales (de pantalla completa) y anuncios recompensados (que eliges ver a cambio de un premio) mediante Google AdMob, un servicio de Google LLC. Para mostrar y medir los anuncios, Google puede recopilar automáticamente datos como:</p><ul><li>El identificador de publicidad de tu dispositivo (ID de publicidad de Android).</li><li>Tu dirección IP y una ubicación aproximada derivada de ella.</li><li>Información técnica del dispositivo, como modelo, sistema operativo e idioma.</li><li>Interacciones con los anuncios, como cuáles se vieron o tocaron.</li></ul><p>Estos datos los trata Google según su propia política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a> y <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cómo usa Google la información de las apps que usan sus servicios</a>.</p>
+    <h2>Consentimiento en Europa y Reino Unido</h2><p>Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, la primera vez que abras el juego verás un formulario de consentimiento de Google (UMP). Ahí decides si aceptas anuncios personalizados o solo anuncios no personalizados. No se cargan anuncios antes de que respondas. Puedes cambiar tu decisión en cualquier momento desde la opción de privacidad en Ajustes dentro del juego.</p><p>También puedes restablecer o eliminar tu ID de publicidad desde los ajustes de Android (Configuración → Privacidad → Anuncios, o Configuración → Google → Anuncios, según tu teléfono).</p>
+    <h2>Compras dentro del juego (Google Play)</h2><p>JarPop ofrece paquetes de monedas, una compra única para quitar los anuncios y una suscripción mensual llamada JarPop Pro. Todos los pagos los procesa Google Play. Nosotros nunca vemos ni guardamos tu número de tarjeta ni otros datos de pago; solo recibimos de Google la confirmación de que la compra se realizó, para poder entregarte lo que compraste. Puedes administrar o cancelar la suscripción desde la app de Google Play (Perfil → Pagos y suscripciones → Suscripciones). Los datos de la compra se rigen por el <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Aviso de Privacidad de Google Payments</a>.</p>
+    <h2>Base legal (RGPD)</h2><ul><li><strong>Anuncios personalizados:</strong> tu consentimiento, que puedes retirar en cualquier momento.</li><li><strong>Anuncios no personalizados y medición básica:</strong> el interés legítimo de mantener el juego gratuito.</li><li><strong>Compras:</strong> la ejecución del contrato de compra que haces con nosotros a través de Google Play.</li></ul>
+    <h2>Tus derechos</h2><p>Si vives en la Unión Europea, el Reino Unido u otro lugar con leyes similares, tienes derecho a acceder a tus datos, corregirlos, pedir que se eliminen, oponerte a su tratamiento, pedir su portabilidad y retirar tu consentimiento. Como nosotros no guardamos datos personales tuyos en servidores propios:</p><ul><li>Para borrar tus datos del juego, desinstálalo o borra sus datos desde los ajustes de Android.</li><li>Para retirar o cambiar tu consentimiento de anuncios, usa la opción de privacidad en Ajustes del juego.</li><li>Para los datos que tratan Google AdMob o Google Play, puedes ejercer tus derechos directamente con Google en <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.</li></ul><p>Si tienes otra solicitud, escríbenos a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> y te responderemos en un plazo máximo de 30 días. También tienes derecho a presentar una reclamación ante la autoridad de protección de datos de tu país.</p>
+    <h2>Transferencias internacionales</h2><p>Google puede tratar los datos de anuncios y compras en servidores ubicados fuera de tu país, incluido Estados Unidos, con las garantías que exige la ley, como las cláusulas contractuales tipo de la Comisión Europea.</p>
+    <h2>Menores de edad</h2><p>JarPop no está dirigido a menores de 13 años y no recopilamos a sabiendas datos de menores de esa edad. En la Unión Europea, los menores de 16 años (o de la edad que fije cada país) necesitan el permiso de su madre, padre o tutor para aceptar anuncios personalizados. Si crees que un menor nos ha proporcionado datos, escríbenos y los eliminaremos.</p>
+    <h2>Seguridad</h2><p>La información del juego permanece en tu dispositivo y la que trata Google está protegida por sus propias medidas de seguridad. Te recomendamos mantener tu teléfono actualizado y protegido con bloqueo de pantalla.</p>
+    <h2>Cambios a esta política</h2><p>Si cambiamos esta política, publicaremos la nueva versión en esta misma página y actualizaremos la fecha de arriba. Si el cambio es importante, también lo avisaremos dentro del juego.</p>
+    <h2>Contacto</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-pt" lang="pt" hidden>
+    <p class="summary"><strong>Resumindo:</strong> O JarPop não pede que você crie uma conta e não armazena seus dados pessoais em servidores próprios. Seu progresso é salvo apenas no seu celular. Os anúncios são exibidos pelo Google AdMob e as compras são processadas pelo Google Play.</p>
+    <h2>Quem é o responsável</h2><p>O JarPop é um jogo para Android desenvolvido por Oscar Sanchez (SoyOskarSanchez), desenvolvedor independente. Para qualquer dúvida sobre esta política, escreva para <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Dados salvos no seu dispositivo</h2><p>Seu progresso no jogo, moedas, vidas e configurações (por exemplo, idioma e som) são salvos apenas no armazenamento local do seu celular. Não recebemos nem temos acesso a essas informações. Se você desinstalar o jogo ou apagar os dados dele nas configurações do Android, essas informações serão excluídas por completo e não poderão ser recuperadas.</p>
+    <h2>Publicidade (Google AdMob)</h2><p>O JarPop exibe anúncios intersticiais (em tela cheia) e anúncios premiados (que você escolhe assistir em troca de uma recompensa) por meio do Google AdMob, um serviço da Google LLC. Para exibir e medir os anúncios, o Google pode coletar automaticamente dados como:</p><ul><li>O identificador de publicidade do seu dispositivo (ID de publicidade do Android).</li><li>Seu endereço IP e uma localização aproximada obtida a partir dele.</li><li>Informações técnicas do dispositivo, como modelo, sistema operacional e idioma.</li><li>Interações com os anúncios, como quais foram vistos ou tocados.</li></ul><p>O Google trata esses dados de acordo com suas próprias políticas: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a> e <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa as informações de apps que usam seus serviços</a>.</p>
+    <h2>Consentimento na Europa e no Reino Unido</h2><p>Se você estiver no Espaço Econômico Europeu, no Reino Unido ou na Suíça, na primeira vez que abrir o jogo verá um formulário de consentimento do Google (UMP). Nele você decide se aceita anúncios personalizados ou apenas anúncios não personalizados. Nenhum anúncio é carregado antes da sua resposta. Você pode mudar sua escolha a qualquer momento na opção de privacidade em Configurações, dentro do jogo.</p><p>Você também pode redefinir ou excluir seu ID de publicidade nas configurações do Android (Configurações → Privacidade → Anúncios, ou Configurações → Google → Anúncios, dependendo do seu celular).</p>
+    <h2>Compras no jogo (Google Play)</h2><p>O JarPop oferece pacotes de moedas, uma compra única para remover os anúncios e uma assinatura mensal chamada JarPop Pro. Todos os pagamentos são processados pelo Google Play. Nunca vemos nem guardamos o número do seu cartão ou outros dados de pagamento; recebemos do Google apenas a confirmação de que a compra foi feita, para entregar o que você comprou. Você pode gerenciar ou cancelar a assinatura no app Google Play (Perfil → Pagamentos e assinaturas → Assinaturas). Os dados de compra são regidos pelo <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Aviso de Privacidade do Google Payments</a>.</p>
+    <h2>Base legal (RGPD e LGPD)</h2><ul><li><strong>Anúncios personalizados:</strong> seu consentimento, que você pode retirar a qualquer momento.</li><li><strong>Anúncios não personalizados e medição básica:</strong> nosso legítimo interesse em manter o jogo gratuito.</li><li><strong>Compras:</strong> a execução do contrato de compra que você faz conosco pelo Google Play.</li></ul>
+    <h2>Seus direitos</h2><p>Se você mora na União Europeia, no Reino Unido, no Brasil ou em outro lugar com leis semelhantes, tem direito de acessar seus dados, corrigi-los, pedir sua exclusão, se opor ao tratamento, pedir sua portabilidade e retirar seu consentimento. Como não armazenamos seus dados pessoais em servidores próprios:</p><ul><li>Para apagar os dados do jogo, desinstale-o ou apague os dados dele nas configurações do Android.</li><li>Para retirar ou mudar seu consentimento de anúncios, use a opção de privacidade em Configurações, dentro do jogo.</li><li>Para os dados tratados pelo Google AdMob ou pelo Google Play, você pode exercer seus direitos diretamente com o Google em <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">sua Conta do Google</a>.</li></ul><p>Para qualquer outra solicitação, escreva para <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> e responderemos em até 30 dias. Você também tem direito de apresentar uma reclamação à autoridade de proteção de dados do seu país.</p>
+    <h2>Transferências internacionais</h2><p>O Google pode tratar os dados de anúncios e compras em servidores localizados fora do seu país, incluindo os Estados Unidos, com as garantias exigidas por lei, como as cláusulas contratuais padrão da Comissão Europeia.</p>
+    <h2>Menores de idade</h2><p>O JarPop não é direcionado a menores de 13 anos, e não coletamos intencionalmente dados de menores dessa idade. Na União Europeia, menores de 16 anos (ou da idade definida por cada país) precisam da permissão dos pais ou responsáveis para aceitar anúncios personalizados. Se você acredita que um menor nos forneceu dados, escreva para nós e os excluiremos.</p>
+    <h2>Segurança</h2><p>As informações do jogo ficam no seu dispositivo, e os dados tratados pelo Google são protegidos pelas medidas de segurança do próprio Google. Recomendamos manter seu celular atualizado e protegido com bloqueio de tela.</p>
+    <h2>Alterações nesta política</h2><p>Se alterarmos esta política, publicaremos a nova versão nesta página e atualizaremos a data no topo. Se a alteração for importante, também avisaremos dentro do jogo.</p>
+    <h2>Contato</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-fr" lang="fr" hidden>
+    <p class="summary"><strong>En bref :</strong> JarPop ne vous demande pas de créer de compte et ne stocke pas vos données personnelles sur nos propres serveurs. Votre progression est enregistrée uniquement sur votre téléphone. Les publicités sont diffusées par Google AdMob et les achats sont traités par Google Play.</p>
+    <h2>Qui est responsable</h2><p>JarPop est un jeu Android développé par Oscar Sanchez (SoyOskarSanchez), développeur indépendant. Pour toute question sur cette politique, écrivez à <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Données stockées sur votre appareil</h2><p>Votre progression dans le jeu, vos pièces, vos vies et vos réglages (par exemple la langue et le son) sont stockés uniquement dans la mémoire locale de votre téléphone. Nous ne recevons pas ces informations et n’y avons pas accès. Si vous désinstallez le jeu ou effacez ses données depuis les paramètres Android, ces informations sont supprimées définitivement et ne peuvent pas être récupérées.</p>
+    <h2>Publicité (Google AdMob)</h2><p>JarPop affiche des publicités interstitielles (plein écran) et des publicités avec récompense (que vous choisissez de regarder en échange d’un bonus) via Google AdMob, un service de Google LLC. Pour diffuser et mesurer les publicités, Google peut collecter automatiquement des données telles que :</p><ul><li>L’identifiant publicitaire de votre appareil (identifiant publicitaire Android).</li><li>Votre adresse IP et une localisation approximative déduite de celle-ci.</li><li>Des informations techniques sur l’appareil, comme le modèle, le système d’exploitation et la langue.</li><li>Vos interactions avec les publicités, par exemple celles qui ont été vues ou touchées.</li></ul><p>Google traite ces données selon ses propres règles : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Règles de confidentialité de Google</a> et <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">comment Google utilise les informations des applications qui utilisent ses services</a>.</p>
+    <h2>Consentement en Europe et au Royaume-Uni</h2><p>Si vous vous trouvez dans l’Espace économique européen, au Royaume-Uni ou en Suisse, un formulaire de consentement de Google (UMP) s’affiche la première fois que vous ouvrez le jeu. Vous y choisissez d’accepter les publicités personnalisées ou uniquement les publicités non personnalisées. Aucune publicité n’est chargée avant votre réponse. Vous pouvez modifier votre choix à tout moment depuis l’option de confidentialité dans les Paramètres du jeu.</p><p>Vous pouvez aussi réinitialiser ou supprimer votre identifiant publicitaire depuis les paramètres Android (Paramètres → Confidentialité → Annonces, ou Paramètres → Google → Annonces, selon votre téléphone).</p>
+    <h2>Achats dans le jeu (Google Play)</h2><p>JarPop propose des packs de pièces, un achat unique pour supprimer les publicités et un abonnement mensuel appelé JarPop Pro. Tous les paiements sont traités par Google Play. Nous ne voyons ni ne conservons jamais votre numéro de carte ou d’autres données de paiement ; nous recevons uniquement de Google la confirmation de l’achat afin de vous livrer ce que vous avez acheté. Vous pouvez gérer ou résilier l’abonnement dans l’application Google Play (Profil → Paiements et abonnements → Abonnements). Les données d’achat sont régies par l’<a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Avis de confidentialité de Google Payments</a>.</p>
+    <h2>Base légale (RGPD)</h2><ul><li><strong>Publicités personnalisées :</strong> votre consentement, que vous pouvez retirer à tout moment.</li><li><strong>Publicités non personnalisées et mesure de base :</strong> notre intérêt légitime à garder le jeu gratuit.</li><li><strong>Achats :</strong> l’exécution du contrat d’achat que vous concluez avec nous via Google Play.</li></ul>
+    <h2>Vos droits</h2><p>Si vous vivez dans l’Union européenne, au Royaume-Uni ou dans un autre pays doté de lois similaires, vous avez le droit d’accéder à vos données, de les rectifier, de demander leur suppression, de vous opposer à leur traitement, de demander leur portabilité et de retirer votre consentement. Comme nous ne stockons pas vos données personnelles sur nos propres serveurs :</p><ul><li>Pour supprimer les données du jeu, désinstallez-le ou effacez ses données depuis les paramètres Android.</li><li>Pour retirer ou modifier votre consentement publicitaire, utilisez l’option de confidentialité dans les Paramètres du jeu.</li><li>Pour les données traitées par Google AdMob ou Google Play, vous pouvez exercer vos droits directement auprès de Google dans <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">votre compte Google</a>.</li></ul><p>Pour toute autre demande, écrivez à <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> ; nous vous répondrons dans un délai maximal de 30 jours. Vous avez également le droit d’introduire une réclamation auprès de l’autorité de protection des données de votre pays.</p>
+    <h2>Transferts internationaux</h2><p>Google peut traiter les données publicitaires et d’achat sur des serveurs situés en dehors de votre pays, y compris aux États-Unis, avec les garanties exigées par la loi, telles que les clauses contractuelles types de la Commission européenne.</p>
+    <h2>Mineurs</h2><p>JarPop ne s’adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment de données concernant des enfants de cet âge. Dans l’Union européenne, les mineurs de moins de 16 ans (ou de l’âge fixé par chaque pays) ont besoin de l’autorisation d’un parent ou tuteur pour accepter les publicités personnalisées. Si vous pensez qu’un enfant nous a fourni des données, écrivez-nous et nous les supprimerons.</p>
+    <h2>Sécurité</h2><p>Les informations du jeu restent sur votre appareil, et les données traitées par Google sont protégées par ses propres mesures de sécurité. Nous vous recommandons de maintenir votre téléphone à jour et protégé par un verrouillage d’écran.</p>
+    <h2>Modifications de cette politique</h2><p>Si nous modifions cette politique, nous publierons la nouvelle version sur cette page et mettrons à jour la date indiquée en haut. Si la modification est importante, nous vous en informerons également dans le jeu.</p>
+    <h2>Contact</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-de" lang="de" hidden>
+    <p class="summary"><strong>Kurz gesagt:</strong> JarPop verlangt kein Benutzerkonto und speichert deine personenbezogenen Daten nicht auf eigenen Servern. Dein Spielfortschritt wird nur auf deinem Handy gespeichert. Werbung wird über Google AdMob ausgeliefert, Käufe werden über Google Play abgewickelt.</p>
+    <h2>Verantwortlicher</h2><p>JarPop ist ein Android-Spiel von Oscar Sanchez (SoyOskarSanchez), einem unabhängigen Entwickler. Bei Fragen zu dieser Datenschutzerklärung schreib an <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Auf deinem Gerät gespeicherte Daten</h2><p>Dein Spielfortschritt, Münzen, Leben und Einstellungen (zum Beispiel Sprache und Ton) werden ausschließlich im lokalen Speicher deines Handys gespeichert. Wir erhalten diese Informationen nicht und haben keinen Zugriff darauf. Wenn du das Spiel deinstallierst oder seine Daten in den Android-Einstellungen löschst, werden diese Informationen vollständig gelöscht und können nicht wiederhergestellt werden.</p>
+    <h2>Werbung (Google AdMob)</h2><p>JarPop zeigt Interstitial-Anzeigen (Vollbild) und Anzeigen mit Belohnung (die du freiwillig gegen eine Belohnung ansiehst) über Google AdMob, einen Dienst der Google LLC. Um Anzeigen auszuliefern und zu messen, kann Google automatisch Daten erheben, zum Beispiel:</p><ul><li>Die Werbe-ID deines Geräts (Android-Werbe-ID).</li><li>Deine IP-Adresse und einen daraus abgeleiteten ungefähren Standort.</li><li>Technische Geräteinformationen wie Modell, Betriebssystem und Sprache.</li><li>Interaktionen mit Anzeigen, etwa welche angesehen oder angetippt wurden.</li></ul><p>Google verarbeitet diese Daten nach seinen eigenen Richtlinien: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> und <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">wie Google Informationen aus Apps verwendet, die Google-Dienste nutzen</a>.</p>
+    <h2>Einwilligung in Europa und im Vereinigten Königreich</h2><p>Wenn du dich im Europäischen Wirtschaftsraum, im Vereinigten Königreich oder in der Schweiz befindest, siehst du beim ersten Öffnen des Spiels ein Einwilligungsformular von Google (UMP). Dort entscheidest du, ob du personalisierte Anzeigen erlaubst oder nur nicht personalisierte Anzeigen. Vor deiner Antwort werden keine Anzeigen geladen. Du kannst deine Entscheidung jederzeit über die Datenschutzoption in den Einstellungen des Spiels ändern.</p><p>Außerdem kannst du deine Werbe-ID in den Android-Einstellungen zurücksetzen oder löschen (Einstellungen → Datenschutz → Werbung oder Einstellungen → Google → Werbung, je nach Handy).</p>
+    <h2>Käufe im Spiel (Google Play)</h2><p>JarPop bietet Münzpakete, einen einmaligen Kauf zum Entfernen der Werbung und ein monatliches Abo namens JarPop Pro. Alle Zahlungen werden über Google Play abgewickelt. Wir sehen oder speichern niemals deine Kartennummer oder andere Zahlungsdaten; wir erhalten von Google nur die Bestätigung, dass der Kauf erfolgt ist, damit wir dir das Gekaufte bereitstellen können. Du kannst das Abo in der Google Play App verwalten oder kündigen (Profil → Zahlungen und Abos → Abos). Für Kaufdaten gilt die <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Datenschutzerklärung von Google Payments</a>.</p>
+    <h2>Rechtsgrundlage (DSGVO)</h2><ul><li><strong>Personalisierte Anzeigen:</strong> deine Einwilligung, die du jederzeit widerrufen kannst.</li><li><strong>Nicht personalisierte Anzeigen und grundlegende Messung:</strong> unser berechtigtes Interesse, das Spiel kostenlos anzubieten.</li><li><strong>Käufe:</strong> die Erfüllung des Kaufvertrags, den du über Google Play mit uns abschließt.</li></ul>
+    <h2>Deine Rechte</h2><p>Wenn du in der Europäischen Union, im Vereinigten Königreich oder an einem anderen Ort mit ähnlichen Gesetzen lebst, hast du das Recht auf Auskunft, Berichtigung, Löschung, Widerspruch gegen die Verarbeitung, Datenübertragbarkeit und Widerruf deiner Einwilligung. Da wir deine personenbezogenen Daten nicht auf eigenen Servern speichern, gilt:</p><ul><li>Um deine Spieldaten zu löschen, deinstalliere das Spiel oder lösche seine Daten in den Android-Einstellungen.</li><li>Um deine Werbeeinwilligung zu widerrufen oder zu ändern, nutze die Datenschutzoption in den Einstellungen des Spiels.</li><li>Für Daten, die Google AdMob oder Google Play verarbeiten, kannst du deine Rechte direkt bei Google in <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">deinem Google-Konto</a> ausüben.</li></ul><p>Für alle anderen Anfragen schreib an <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>; wir antworten innerhalb von höchstens 30 Tagen. Du hast außerdem das Recht, dich bei der Datenschutzaufsichtsbehörde deines Landes zu beschweren.</p>
+    <h2>Internationale Datenübermittlung</h2><p>Google kann Werbe- und Kaufdaten auf Servern außerhalb deines Landes verarbeiten, auch in den Vereinigten Staaten, mit den gesetzlich vorgeschriebenen Garantien wie den Standardvertragsklauseln der Europäischen Kommission.</p>
+    <h2>Kinder und Jugendliche</h2><p>JarPop richtet sich nicht an Kinder unter 13 Jahren, und wir erheben wissentlich keine Daten von Kindern in diesem Alter. In der Europäischen Union benötigen Minderjährige unter 16 Jahren (oder dem im jeweiligen Land festgelegten Alter) die Erlaubnis eines Elternteils oder Erziehungsberechtigten, um personalisierte Anzeigen zu erlauben. Wenn du glaubst, dass ein Kind uns Daten übermittelt hat, schreib uns, und wir löschen sie.</p>
+    <h2>Sicherheit</h2><p>Die Spieldaten bleiben auf deinem Gerät, und die von Google verarbeiteten Daten sind durch Googles eigene Sicherheitsmaßnahmen geschützt. Wir empfehlen, dein Handy aktuell zu halten und mit einer Displaysperre zu schützen.</p>
+    <h2>Änderungen dieser Erklärung</h2><p>Wenn wir diese Datenschutzerklärung ändern, veröffentlichen wir die neue Version auf dieser Seite und aktualisieren das Datum oben. Bei wichtigen Änderungen informieren wir dich zusätzlich im Spiel.</p>
+    <h2>Kontakt</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-it" lang="it" hidden>
+    <p class="summary"><strong>In breve:</strong> JarPop non ti chiede di creare un account e non conserva i tuoi dati personali su server propri. I tuoi progressi vengono salvati solo sul tuo telefono. Gli annunci sono forniti da Google AdMob e gli acquisti sono gestiti da Google Play.</p>
+    <h2>Titolare del trattamento</h2><p>JarPop è un gioco per Android sviluppato da Oscar Sanchez (SoyOskarSanchez), sviluppatore indipendente. Per qualsiasi domanda su questa informativa scrivi a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Dati salvati sul tuo dispositivo</h2><p>I tuoi progressi nel gioco, le monete, le vite e le impostazioni (ad esempio lingua e audio) vengono salvati solo nella memoria locale del tuo telefono. Non riceviamo queste informazioni e non vi abbiamo accesso. Se disinstalli il gioco o cancelli i suoi dati dalle impostazioni di Android, queste informazioni vengono eliminate completamente e non possono essere recuperate.</p>
+    <h2>Pubblicità (Google AdMob)</h2><p>JarPop mostra annunci interstitial (a schermo intero) e annunci con premio (che scegli di guardare in cambio di una ricompensa) tramite Google AdMob, un servizio di Google LLC. Per mostrare e misurare gli annunci, Google può raccogliere automaticamente dati come:</p><ul><li>L’identificatore pubblicitario del tuo dispositivo (ID pubblicità Android).</li><li>Il tuo indirizzo IP e una posizione approssimativa ricavata da esso.</li><li>Informazioni tecniche sul dispositivo, come modello, sistema operativo e lingua.</li><li>Le interazioni con gli annunci, ad esempio quali sono stati visti o toccati.</li></ul><p>Google tratta questi dati secondo le proprie norme: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Norme sulla privacy di Google</a> e <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">come Google utilizza le informazioni delle app che usano i suoi servizi</a>.</p>
+    <h2>Consenso in Europa e nel Regno Unito</h2><p>Se ti trovi nello Spazio economico europeo, nel Regno Unito o in Svizzera, la prima volta che apri il gioco vedrai un modulo di consenso di Google (UMP). Lì decidi se accettare annunci personalizzati o solo annunci non personalizzati. Nessun annuncio viene caricato prima della tua risposta. Puoi cambiare la tua scelta in qualsiasi momento dall’opzione sulla privacy nelle Impostazioni del gioco.</p><p>Puoi anche reimpostare o eliminare il tuo ID pubblicità dalle impostazioni di Android (Impostazioni → Privacy → Annunci, oppure Impostazioni → Google → Annunci, a seconda del telefono).</p>
+    <h2>Acquisti nel gioco (Google Play)</h2><p>JarPop offre pacchetti di monete, un acquisto unico per rimuovere gli annunci e un abbonamento mensile chiamato JarPop Pro. Tutti i pagamenti sono gestiti da Google Play. Non vediamo né conserviamo mai il numero della tua carta o altri dati di pagamento; riceviamo da Google solo la conferma che l’acquisto è avvenuto, per consegnarti ciò che hai comprato. Puoi gestire o annullare l’abbonamento dall’app Google Play (Profilo → Pagamenti e abbonamenti → Abbonamenti). I dati di acquisto sono regolati dall’<a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Informativa sulla privacy di Google Payments</a>.</p>
+    <h2>Base giuridica (GDPR)</h2><ul><li><strong>Annunci personalizzati:</strong> il tuo consenso, che puoi revocare in qualsiasi momento.</li><li><strong>Annunci non personalizzati e misurazione di base:</strong> il nostro legittimo interesse a mantenere il gioco gratuito.</li><li><strong>Acquisti:</strong> l’esecuzione del contratto di acquisto che concludi con noi tramite Google Play.</li></ul>
+    <h2>I tuoi diritti</h2><p>Se vivi nell’Unione europea, nel Regno Unito o in un altro luogo con leggi simili, hai il diritto di accedere ai tuoi dati, rettificarli, chiederne la cancellazione, opporti al trattamento, chiederne la portabilità e revocare il consenso. Poiché non conserviamo i tuoi dati personali su server propri:</p><ul><li>Per cancellare i dati del gioco, disinstallalo o cancella i suoi dati dalle impostazioni di Android.</li><li>Per revocare o modificare il consenso agli annunci, usa l’opzione sulla privacy nelle Impostazioni del gioco.</li><li>Per i dati trattati da Google AdMob o Google Play, puoi esercitare i tuoi diritti direttamente con Google nel <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo Account Google</a>.</li></ul><p>Per qualsiasi altra richiesta scrivi a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>: ti risponderemo entro 30 giorni. Hai anche il diritto di presentare un reclamo all’autorità per la protezione dei dati del tuo paese.</p>
+    <h2>Trasferimenti internazionali</h2><p>Google può trattare i dati relativi ad annunci e acquisti su server situati fuori dal tuo paese, compresi gli Stati Uniti, con le garanzie richieste dalla legge, come le clausole contrattuali tipo della Commissione europea.</p>
+    <h2>Minori</h2><p>JarPop non è rivolto a minori di 13 anni e non raccogliamo consapevolmente dati di minori di questa età. Nell’Unione europea, i minori di 16 anni (o dell’età stabilita da ciascun paese) hanno bisogno del permesso di un genitore o tutore per accettare annunci personalizzati. Se ritieni che un minore ci abbia fornito dati, scrivici e li elimineremo.</p>
+    <h2>Sicurezza</h2><p>Le informazioni del gioco restano sul tuo dispositivo e i dati trattati da Google sono protetti dalle misure di sicurezza di Google. Ti consigliamo di mantenere il telefono aggiornato e protetto con il blocco schermo.</p>
+    <h2>Modifiche a questa informativa</h2><p>Se modifichiamo questa informativa, pubblicheremo la nuova versione su questa pagina e aggiorneremo la data in alto. Se la modifica è importante, te lo comunicheremo anche nel gioco.</p>
+    <h2>Contatti</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-ja" lang="ja" hidden>
+    <p class="summary"><strong>概要：</strong> JarPopではアカウントの作成は不要で、お客様の個人データを当方のサーバーに保存することはありません。ゲームの進行状況はお使いのスマートフォンにのみ保存されます。広告はGoogle AdMobによって配信され、購入はGoogle Playによって処理されます。</p>
+    <h2>運営者</h2><p>JarPopは、個人開発者のOscar Sanchez（SoyOskarSanchez）が開発したAndroid向けゲームです。本ポリシーに関するお問い合わせは <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> までご連絡ください。</p>
+    <h2>端末に保存されるデータ</h2><p>ゲームの進行状況、コイン、ライフ、設定（言語やサウンドなど）は、お使いのスマートフォンのローカルストレージにのみ保存されます。当方がこれらの情報を受け取ったり、アクセスしたりすることはありません。ゲームをアンインストールするか、Androidの設定からデータを削除すると、これらの情報は完全に削除され、復元することはできません。</p>
+    <h2>広告（Google AdMob）</h2><p>JarPopでは、Google LLCのサービスであるGoogle AdMobを通じて、インタースティシャル広告（全画面広告）とリワード広告（報酬と引き換えにご自身の選択で視聴する広告）を表示します。広告の配信と効果測定のため、Googleは次のようなデータを自動的に収集する場合があります。</p><ul><li>端末の広告ID（Android広告ID）</li><li>IPアドレスと、そこから推定されるおおよその位置情報</li><li>機種、OS、言語などの端末の技術情報</li><li>表示またはタップされた広告など、広告とのやり取り</li></ul><p>これらのデータはGoogle独自のポリシーに基づいて取り扱われます：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシー ポリシー</a>、<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google のサービスを使用するアプリから収集した情報の Google による使用</a>。</p>
+    <h2>ヨーロッパおよび英国での同意</h2><p>欧州経済領域、英国またはスイスにいる場合、初めてゲームを開いたときにGoogleの同意フォーム（UMP）が表示されます。そこで、パーソナライズド広告を許可するか、パーソナライズされていない広告のみにするかを選択できます。回答するまで広告は読み込まれません。選択内容は、ゲーム内の「設定」にあるプライバシーオプションからいつでも変更できます。</p><p>また、Androidの設定から広告IDをリセットまたは削除することもできます（機種により「設定 → プライバシー → 広告」または「設定 → Google → 広告」）。</p>
+    <h2>ゲーム内購入（Google Play）</h2><p>JarPopでは、コインパック、広告を非表示にする買い切りアイテム、月額サブスクリプション「JarPop Pro」を提供しています。すべての支払いはGoogle Playによって処理されます。当方がカード番号やその他の支払い情報を見たり保存したりすることは一切ありません。購入されたアイテムをお届けするため、購入が完了したという確認のみをGoogleから受け取ります。サブスクリプションはGoogle Playアプリ（プロフィール → お支払いと定期購入 → 定期購入）から管理または解約できます。購入データには<a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google ペイメント プライバシーに関するお知らせ</a>が適用されます。</p>
+    <h2>法的根拠（GDPR）</h2><ul><li><strong>パーソナライズド広告：</strong> お客様の同意（いつでも撤回できます）。</li><li><strong>パーソナライズされていない広告と基本的な効果測定：</strong> ゲームを無料で提供し続けるという当方の正当な利益。</li><li><strong>購入：</strong> Google Playを通じてお客様と当方の間で締結される購入契約の履行。</li></ul>
+    <h2>お客様の権利</h2><p>欧州連合、英国、または同様の法律がある地域にお住まいの場合、お客様にはデータへのアクセス、訂正、削除の請求、処理への異議、データポータビリティ、同意の撤回の権利があります。当方はお客様の個人データを自社サーバーに保存していないため、次の方法をご利用ください。</p><ul><li>ゲームのデータを削除するには、ゲームをアンインストールするか、Androidの設定からデータを削除してください。</li><li>広告に関する同意を撤回または変更するには、ゲーム内の「設定」にあるプライバシーオプションをご利用ください。</li><li>Google AdMobまたはGoogle Playが取り扱うデータについては、<a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google アカウント</a>からGoogleに対して直接権利を行使できます。</li></ul><p>その他のご請求は <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> までご連絡ください。30日以内に回答いたします。また、お住まいの国のデータ保護機関に苦情を申し立てる権利もあります。</p>
+    <h2>国外へのデータ移転</h2><p>Googleは、広告および購入に関するデータを、米国を含むお客様の国以外にあるサーバーで、欧州委員会の標準契約条項など法律で求められる保護措置を講じたうえで処理する場合があります。</p>
+    <h2>未成年者について</h2><p>JarPopは13歳未満のお子様を対象としておらず、当方がこの年齢のお子様のデータを故意に収集することはありません。欧州連合では、16歳未満（または各国が定める年齢未満）の未成年者がパーソナライズド広告に同意するには、保護者の許可が必要です。お子様が当方にデータを提供したと思われる場合はご連絡ください。削除いたします。</p>
+    <h2>セキュリティ</h2><p>ゲームの情報はお客様の端末内にとどまり、Googleが取り扱うデータはGoogle独自のセキュリティ対策によって保護されています。スマートフォンを最新の状態に保ち、画面ロックで保護することをおすすめします。</p>
+    <h2>本ポリシーの変更</h2><p>本ポリシーを変更する場合は、このページに新しい版を掲載し、上部の日付を更新します。重要な変更の場合は、ゲーム内でもお知らせします。</p>
+    <h2>お問い合わせ</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-ko" lang="ko" hidden>
+    <p class="summary"><strong>요약:</strong> JarPop은 계정 생성을 요구하지 않으며 개인정보를 자체 서버에 저장하지 않습니다. 게임 진행 상황은 사용자의 휴대폰에만 저장됩니다. 광고는 Google AdMob을 통해 게재되며, 구매는 Google Play에서 처리됩니다.</p>
+    <h2>운영자</h2><p>JarPop은 독립 개발자 Oscar Sanchez(SoyOskarSanchez)가 개발한 Android 게임입니다. 이 방침에 대한 문의는 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>(으)로 보내 주세요.</p>
+    <h2>기기에 저장되는 데이터</h2><p>게임 진행 상황, 코인, 생명, 설정(예: 언어 및 사운드)은 휴대폰의 로컬 저장소에만 저장됩니다. 당사는 이 정보를 받거나 이에 접근하지 않습니다. 게임을 삭제하거나 Android 설정에서 게임 데이터를 지우면 이 정보는 완전히 삭제되며 복구할 수 없습니다.</p>
+    <h2>광고(Google AdMob)</h2><p>JarPop은 Google LLC의 서비스인 Google AdMob을 통해 전면 광고와 보상형 광고(보상을 받기 위해 사용자가 선택하여 시청하는 광고)를 표시합니다. 광고 게재 및 측정을 위해 Google은 다음과 같은 데이터를 자동으로 수집할 수 있습니다.</p><ul><li>기기의 광고 식별자(Android 광고 ID)</li><li>IP 주소 및 이를 통해 추정되는 대략적인 위치</li><li>모델, 운영체제, 언어 등 기기의 기술 정보</li><li>조회하거나 탭한 광고 등 광고와의 상호작용</li></ul><p>Google은 자체 정책에 따라 이 데이터를 처리합니다: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 서비스를 사용하는 앱의 정보를 Google이 사용하는 방법</a>.</p>
+    <h2>유럽 및 영국에서의 동의</h2><p>유럽 경제 지역, 영국 또는 스위스에 있는 경우 게임을 처음 열 때 Google 동의 양식(UMP)이 표시됩니다. 여기에서 맞춤 광고를 허용할지, 비맞춤 광고만 볼지 선택할 수 있습니다. 응답하기 전에는 광고가 로드되지 않습니다. 선택 사항은 게임 내 설정의 개인정보 보호 옵션에서 언제든지 변경할 수 있습니다.</p><p>또한 Android 설정에서 광고 ID를 재설정하거나 삭제할 수 있습니다(휴대폰에 따라 설정 → 개인정보 보호 → 광고 또는 설정 → Google → 광고).</p>
+    <h2>게임 내 구매(Google Play)</h2><p>JarPop은 코인 패키지, 광고 제거를 위한 일회성 구매, 월간 구독 JarPop Pro를 제공합니다. 모든 결제는 Google Play에서 처리됩니다. 당사는 카드 번호나 기타 결제 정보를 절대 보거나 저장하지 않으며, 구매한 항목을 제공하기 위해 Google로부터 구매 완료 확인만 받습니다. 구독은 Google Play 앱(프로필 → 결제 및 정기 결제 → 정기 결제)에서 관리하거나 취소할 수 있습니다. 구매 데이터에는 <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google 결제 개인정보처리방침</a>이 적용됩니다.</p>
+    <h2>법적 근거(GDPR)</h2><ul><li><strong>맞춤 광고:</strong> 사용자의 동의(언제든지 철회할 수 있음).</li><li><strong>비맞춤 광고 및 기본 측정:</strong> 게임을 무료로 유지하기 위한 당사의 정당한 이익.</li><li><strong>구매:</strong> Google Play를 통해 사용자와 당사 간에 체결되는 구매 계약의 이행.</li></ul>
+    <h2>사용자의 권리</h2><p>유럽연합, 영국 또는 유사한 법률이 있는 지역에 거주하는 경우, 사용자는 자신의 데이터에 대한 열람, 정정, 삭제 요청, 처리 거부, 데이터 이동, 동의 철회의 권리를 가집니다. 당사는 개인정보를 자체 서버에 저장하지 않으므로 다음과 같이 하실 수 있습니다.</p><ul><li>게임 데이터를 삭제하려면 게임을 삭제하거나 Android 설정에서 데이터를 지우세요.</li><li>광고 동의를 철회하거나 변경하려면 게임 내 설정의 개인정보 보호 옵션을 사용하세요.</li><li>Google AdMob 또는 Google Play가 처리하는 데이터의 경우 <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google 계정</a>에서 Google에 직접 권리를 행사할 수 있습니다.</li></ul><p>기타 요청은 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>(으)로 보내 주시면 30일 이내에 답변드립니다. 또한 거주 국가의 개인정보 보호 기관에 민원을 제기할 권리가 있습니다.</p>
+    <h2>국외 이전</h2><p>Google은 유럽위원회의 표준계약조항 등 법률이 요구하는 보호 조치를 적용하여, 미국을 포함한 사용자 국가 외부의 서버에서 광고 및 구매 데이터를 처리할 수 있습니다.</p>
+    <h2>아동</h2><p>JarPop은 13세 미만 아동을 대상으로 하지 않으며, 당사는 해당 연령 아동의 데이터를 고의로 수집하지 않습니다. 유럽연합에서는 16세 미만(또는 각 국가가 정한 연령 미만)의 미성년자가 맞춤 광고에 동의하려면 부모 또는 보호자의 허락이 필요합니다. 아동이 당사에 데이터를 제공했다고 생각되면 연락해 주세요. 해당 데이터를 삭제하겠습니다.</p>
+    <h2>보안</h2><p>게임 정보는 사용자의 기기에 보관되며, Google이 처리하는 데이터는 Google 자체 보안 조치로 보호됩니다. 휴대폰을 최신 상태로 유지하고 화면 잠금으로 보호하는 것을 권장합니다.</p>
+    <h2>방침 변경</h2><p>이 방침을 변경하는 경우 이 페이지에 새 버전을 게시하고 상단의 날짜를 업데이트합니다. 중요한 변경 사항이 있으면 게임 내에서도 알려 드립니다.</p>
+    <h2>문의</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-zh-CN" lang="zh-CN" hidden>
+    <p class="summary"><strong>简要说明：</strong> JarPop 不要求您创建账户，也不会在我们自己的服务器上存储您的个人数据。您的游戏进度仅保存在您的手机上。广告由 Google AdMob 提供，购买由 Google Play 处理。</p>
+    <h2>责任方</h2><p>JarPop 是由独立开发者 Oscar Sanchez（SoyOskarSanchez）开发的 Android 游戏。如对本政策有任何疑问，请发送邮件至 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>。</p>
+    <h2>保存在您设备上的数据</h2><p>您的游戏进度、金币、生命值和设置（例如语言和声音）仅保存在您手机的本地存储中。我们不会接收也无法访问这些信息。如果您卸载游戏或在 Android 设置中清除其数据，这些信息将被彻底删除且无法恢复。</p>
+    <h2>广告（Google AdMob）</h2><p>JarPop 通过 Google LLC 提供的 Google AdMob 服务展示插页式广告（全屏广告）和激励广告（您可自愿观看以换取奖励）。为了投放和衡量广告，Google 可能会自动收集以下数据：</p><ul><li>您设备的广告标识符（Android 广告 ID）。</li><li>您的 IP 地址以及据此推断的大致位置。</li><li>设备的技术信息，例如型号、操作系统和语言。</li><li>与广告的互动，例如浏览或点击了哪些广告。</li></ul><p>Google 根据其自身政策处理这些数据：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私权政策</a>，以及<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 如何使用来自使用其服务的应用的信息</a>。</p>
+    <h2>欧洲和英国的同意</h2><p>如果您位于欧洲经济区、英国或瑞士，首次打开游戏时会看到 Google 的同意表单（UMP）。您可以在其中选择是否接受个性化广告，或仅接受非个性化广告。在您作出选择之前，不会加载任何广告。您可以随时通过游戏“设置”中的隐私选项更改您的选择。</p><p>您还可以在 Android 设置中重置或删除您的广告 ID（视手机而定：设置 → 隐私 → 广告，或 设置 → Google → 广告）。</p>
+    <h2>游戏内购买（Google Play）</h2><p>JarPop 提供金币礼包、一次性去除广告购买以及名为 JarPop Pro 的月度订阅。所有付款均由 Google Play 处理。我们绝不会看到或存储您的卡号或其他付款信息；我们只会从 Google 收到购买成功的确认，以便向您发放所购内容。您可以在 Google Play 应用中管理或取消订阅（个人资料 → 付款和订阅 → 订阅）。购买数据受<a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google 付款隐私声明</a>约束。</p>
+    <h2>法律依据（GDPR）</h2><ul><li><strong>个性化广告：</strong> 您的同意，您可以随时撤回。</li><li><strong>非个性化广告及基本衡量：</strong> 我们保持游戏免费的正当利益。</li><li><strong>购买：</strong> 履行您通过 Google Play 与我们订立的购买合同。</li></ul>
+    <h2>您的权利</h2><p>如果您居住在欧盟、英国或其他有类似法律的地区，您有权访问、更正、删除您的数据，反对对其进行处理，要求数据可携带，以及撤回您的同意。由于我们不会在自己的服务器上存储您的个人数据：</p><ul><li>如需删除游戏数据，请卸载游戏或在 Android 设置中清除其数据。</li><li>如需撤回或更改广告同意，请使用游戏“设置”中的隐私选项。</li><li>对于 Google AdMob 或 Google Play 处理的数据，您可以在<a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">您的 Google 账号</a>中直接向 Google 行使您的权利。</li></ul><p>如有其他请求，请发送邮件至 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>，我们将在 30 天内回复。您也有权向您所在国家/地区的数据保护机构提出投诉。</p>
+    <h2>国际数据传输</h2><p>Google 可能会在您所在国家/地区以外（包括美国）的服务器上处理广告和购买数据，并采取法律要求的保障措施，例如欧盟委员会的标准合同条款。</p>
+    <h2>未成年人</h2><p>JarPop 并非面向 13 岁以下儿童，我们不会故意收集该年龄段儿童的数据。在欧盟，未满 16 周岁（或各国规定的年龄）的未成年人需获得父母或监护人的许可，才能接受个性化广告。如果您认为有儿童向我们提供了数据，请与我们联系，我们将予以删除。</p>
+    <h2>安全</h2><p>游戏信息保留在您的设备上，Google 处理的数据受 Google 自身安全措施保护。我们建议您保持手机系统为最新版本，并使用屏幕锁定加以保护。</p>
+    <h2>本政策的变更</h2><p>如果我们更改本政策，将在本页面发布新版本并更新顶部的日期。如有重大变更，我们也会在游戏内通知您。</p>
+    <h2>联系方式</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-zh-TW" lang="zh-TW" hidden>
+    <p class="summary"><strong>摘要：</strong> JarPop 不需要您建立帳戶，也不會在我們自己的伺服器上儲存您的個人資料。您的遊戲進度只會儲存在您的手機上。廣告由 Google AdMob 提供，購買則由 Google Play 處理。</p>
+    <h2>負責人</h2><p>JarPop 是由獨立開發者 Oscar Sanchez（SoyOskarSanchez）開發的 Android 遊戲。如對本政策有任何疑問，請寄信至 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>。</p>
+    <h2>儲存在您裝置上的資料</h2><p>您的遊戲進度、金幣、生命值和設定（例如語言和音效）只會儲存在您手機的本機儲存空間中。我們不會接收也無法存取這些資訊。如果您解除安裝遊戲，或在 Android 設定中清除其資料，這些資訊將被完全刪除且無法復原。</p>
+    <h2>廣告（Google AdMob）</h2><p>JarPop 透過 Google LLC 提供的 Google AdMob 服務顯示插頁式廣告（全螢幕廣告）和獎勵廣告（您可自行選擇觀看以換取獎勵）。為了放送及評估廣告，Google 可能會自動收集以下資料：</p><ul><li>您裝置的廣告識別碼（Android 廣告 ID）。</li><li>您的 IP 位址以及據此推估的大致位置。</li><li>裝置的技術資訊，例如型號、作業系統和語言。</li><li>與廣告的互動，例如瀏覽或點按了哪些廣告。</li></ul><p>Google 會依據其自身政策處理這些資料：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>，以及<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 如何使用採用其服務之應用程式的資訊</a>。</p>
+    <h2>歐洲和英國的同意</h2><p>如果您位於歐洲經濟區、英國或瑞士，第一次開啟遊戲時會看到 Google 的同意表單（UMP）。您可以在其中選擇是否接受個人化廣告，或只接受非個人化廣告。在您做出選擇之前，不會載入任何廣告。您可以隨時透過遊戲「設定」中的隱私權選項變更您的選擇。</p><p>您也可以在 Android 設定中重設或刪除您的廣告 ID（視手機而定：設定 → 隱私權 → 廣告，或 設定 → Google → 廣告）。</p>
+    <h2>遊戲內購買（Google Play）</h2><p>JarPop 提供金幣包、一次性移除廣告購買，以及名為 JarPop Pro 的月訂閱方案。所有付款均由 Google Play 處理。我們絕不會看到或儲存您的卡號或其他付款資訊；我們只會從 Google 收到購買完成的確認，以便提供您購買的內容。您可以在 Google Play 應用程式中管理或取消訂閱（個人資料 → 付款和訂閱 → 訂閱項目）。購買資料受<a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google Payments 隱私權聲明</a>規範。</p>
+    <h2>法律依據（GDPR）</h2><ul><li><strong>個人化廣告：</strong> 您的同意，您可以隨時撤回。</li><li><strong>非個人化廣告及基本評估：</strong> 我們維持遊戲免費的正當利益。</li><li><strong>購買：</strong> 履行您透過 Google Play 與我們訂立的購買契約。</li></ul>
+    <h2>您的權利</h2><p>如果您居住在歐盟、英國或其他有類似法律的地區，您有權存取、更正、刪除您的資料，反對其處理，要求資料可攜，以及撤回您的同意。由於我們不會在自己的伺服器上儲存您的個人資料：</p><ul><li>如需刪除遊戲資料，請解除安裝遊戲，或在 Android 設定中清除其資料。</li><li>如需撤回或變更廣告同意，請使用遊戲「設定」中的隱私權選項。</li><li>對於 Google AdMob 或 Google Play 處理的資料，您可以在<a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">您的 Google 帳戶</a>中直接向 Google 行使您的權利。</li></ul><p>如有其他要求，請寄信至 <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>，我們將在 30 天內回覆。您也有權向您所在國家/地區的資料保護機關提出申訴。</p>
+    <h2>國際資料傳輸</h2><p>Google 可能會在您所在國家/地區以外（包括美國）的伺服器上處理廣告和購買資料，並採取法律要求的保護措施，例如歐盟執委會的標準契約條款。</p>
+    <h2>未成年人</h2><p>JarPop 並非以未滿 13 歲的兒童為對象，我們也不會故意收集該年齡兒童的資料。在歐盟，未滿 16 歲（或各國規定之年齡）的未成年人需取得父母或監護人的許可，才能接受個人化廣告。如果您認為有兒童向我們提供了資料，請與我們聯絡，我們將予以刪除。</p>
+    <h2>安全性</h2><p>遊戲資訊保留在您的裝置上，而 Google 處理的資料受 Google 自身的安全措施保護。建議您將手機保持在最新版本，並使用螢幕鎖定加以保護。</p>
+    <h2>本政策的變更</h2><p>如果我們變更本政策，將在本頁面發布新版本並更新上方的日期。如有重大變更，我們也會在遊戲內通知您。</p>
+    <h2>聯絡方式</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-ru" lang="ru" hidden>
+    <p class="summary"><strong>Коротко:</strong> JarPop не требует создавать аккаунт и не хранит ваши персональные данные на наших собственных серверах. Ваш прогресс сохраняется только на вашем телефоне. Реклама показывается через Google AdMob, а покупки обрабатывает Google Play.</p>
+    <h2>Кто отвечает за данные</h2><p>JarPop — игра для Android, разработанная независимым разработчиком Oscar Sanchez (SoyOskarSanchez). По любым вопросам об этой политике пишите на <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Данные, хранящиеся на вашем устройстве</h2><p>Ваш прогресс в игре, монеты, жизни и настройки (например, язык и звук) хранятся только в локальной памяти вашего телефона. Мы не получаем эту информацию и не имеем к ней доступа. Если вы удалите игру или очистите её данные в настройках Android, эта информация будет удалена полностью без возможности восстановления.</p>
+    <h2>Реклама (Google AdMob)</h2><p>JarPop показывает межстраничную (полноэкранную) рекламу и рекламу с вознаграждением (которую вы сами решаете посмотреть ради награды) через Google AdMob — сервис компании Google LLC. Для показа рекламы и оценки её эффективности Google может автоматически собирать такие данные, как:</p><ul><li>Рекламный идентификатор вашего устройства (рекламный идентификатор Android).</li><li>Ваш IP-адрес и определённое по нему приблизительное местоположение.</li><li>Технические сведения об устройстве: модель, операционная система и язык.</li><li>Взаимодействие с рекламой, например какие объявления были просмотрены или нажаты.</li></ul><p>Google обрабатывает эти данные в соответствии со своими правилами: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Политика конфиденциальности Google</a> и <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">как Google использует информацию из приложений, использующих его сервисы</a>.</p>
+    <h2>Согласие в Европе и Великобритании</h2><p>Если вы находитесь в Европейской экономической зоне, Великобритании или Швейцарии, при первом запуске игры вы увидите форму согласия Google (UMP). В ней вы выбираете, разрешить персонализированную рекламу или только неперсонализированную. До вашего ответа реклама не загружается. Вы можете изменить свой выбор в любое время с помощью параметра конфиденциальности в настройках игры.</p><p>Вы также можете сбросить или удалить рекламный идентификатор в настройках Android (Настройки → Конфиденциальность → Реклама или Настройки → Google → Реклама, в зависимости от телефона).</p>
+    <h2>Покупки в игре (Google Play)</h2><p>В JarPop доступны наборы монет, разовая покупка для отключения рекламы и ежемесячная подписка JarPop Pro. Все платежи обрабатывает Google Play. Мы никогда не видим и не храним номер вашей карты или другие платёжные данные; от Google мы получаем только подтверждение того, что покупка совершена, чтобы выдать вам приобретённое. Управлять подпиской или отменить её можно в приложении Google Play (Профиль → Платежи и подписки → Подписки). Данные о покупках регулируются <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Уведомлением о конфиденциальности Google Payments</a>.</p>
+    <h2>Правовое основание (GDPR)</h2><ul><li><strong>Персонализированная реклама:</strong> ваше согласие, которое вы можете отозвать в любое время.</li><li><strong>Неперсонализированная реклама и базовая аналитика:</strong> наш законный интерес в том, чтобы игра оставалась бесплатной.</li><li><strong>Покупки:</strong> исполнение договора купли-продажи, который вы заключаете с нами через Google Play.</li></ul>
+    <h2>Ваши права</h2><p>Если вы живёте в Европейском союзе, Великобритании или другой стране с аналогичным законодательством, вы имеете право на доступ к своим данным, их исправление и удаление, на возражение против их обработки, на переносимость данных и на отзыв согласия. Поскольку мы не храним ваши персональные данные на собственных серверах:</p><ul><li>Чтобы удалить данные игры, удалите её или очистите её данные в настройках Android.</li><li>Чтобы отозвать или изменить согласие на рекламу, используйте параметр конфиденциальности в настройках игры.</li><li>В отношении данных, которые обрабатывают Google AdMob или Google Play, вы можете реализовать свои права непосредственно в Google через <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">свой аккаунт Google</a>.</li></ul><p>С любыми другими запросами пишите на <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> — мы ответим в течение 30 дней. Вы также имеете право подать жалобу в орган по защите данных вашей страны.</p>
+    <h2>Международная передача данных</h2><p>Google может обрабатывать данные о рекламе и покупках на серверах за пределами вашей страны, в том числе в США, с соблюдением требуемых законом гарантий, например стандартных договорных положений Европейской комиссии.</p>
+    <h2>Дети</h2><p>JarPop не предназначен для детей младше 13 лет, и мы сознательно не собираем данные детей этого возраста. В Европейском союзе несовершеннолетним младше 16 лет (или возраста, установленного в конкретной стране) для согласия на персонализированную рекламу требуется разрешение родителя или опекуна. Если вы считаете, что ребёнок предоставил нам данные, напишите нам, и мы их удалим.</p>
+    <h2>Безопасность</h2><p>Игровая информация остаётся на вашем устройстве, а данные, обрабатываемые Google, защищены собственными мерами безопасности Google. Рекомендуем своевременно обновлять телефон и защищать его блокировкой экрана.</p>
+    <h2>Изменения политики</h2><p>Если мы изменим эту политику, мы опубликуем новую версию на этой странице и обновим дату вверху. О существенных изменениях мы также сообщим в игре.</p>
+    <h2>Контакты</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-id" lang="id" hidden>
+    <p class="summary"><strong>Singkatnya:</strong> JarPop tidak meminta Anda membuat akun dan tidak menyimpan data pribadi Anda di server kami sendiri. Progres Anda hanya disimpan di ponsel Anda. Iklan ditayangkan oleh Google AdMob dan pembelian diproses oleh Google Play.</p>
+    <h2>Pihak yang bertanggung jawab</h2><p>JarPop adalah game Android yang dikembangkan oleh Oscar Sanchez (SoyOskarSanchez), developer independen. Untuk pertanyaan apa pun tentang kebijakan ini, kirim email ke <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>Data yang disimpan di perangkat Anda</h2><p>Progres game, koin, nyawa, dan pengaturan Anda (misalnya bahasa dan suara) hanya disimpan di penyimpanan lokal ponsel Anda. Kami tidak menerima dan tidak memiliki akses ke informasi tersebut. Jika Anda meng-uninstal game atau menghapus datanya dari pengaturan Android, informasi tersebut akan terhapus sepenuhnya dan tidak dapat dipulihkan.</p>
+    <h2>Iklan (Google AdMob)</h2><p>JarPop menampilkan iklan interstisial (layar penuh) dan iklan reward (yang Anda pilih untuk ditonton demi mendapatkan hadiah) melalui Google AdMob, layanan milik Google LLC. Untuk menayangkan dan mengukur iklan, Google dapat mengumpulkan data secara otomatis, seperti:</p><ul><li>ID iklan perangkat Anda (ID Iklan Android).</li><li>Alamat IP Anda dan perkiraan lokasi yang diperoleh darinya.</li><li>Informasi teknis perangkat, seperti model, sistem operasi, dan bahasa.</li><li>Interaksi dengan iklan, seperti iklan mana yang dilihat atau diketuk.</li></ul><p>Google memproses data ini sesuai kebijakannya sendiri: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a> dan <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cara Google menggunakan informasi dari aplikasi yang menggunakan layanannya</a>.</p>
+    <h2>Persetujuan di Eropa dan Inggris</h2><p>Jika Anda berada di Wilayah Ekonomi Eropa, Inggris, atau Swiss, saat pertama kali membuka game Anda akan melihat formulir persetujuan dari Google (UMP). Di sana Anda memilih apakah mengizinkan iklan yang dipersonalisasi atau hanya iklan yang tidak dipersonalisasi. Tidak ada iklan yang dimuat sebelum Anda menjawab. Anda dapat mengubah pilihan kapan saja melalui opsi privasi di Pengaturan dalam game.</p><p>Anda juga dapat mereset atau menghapus ID iklan dari pengaturan Android (Setelan → Privasi → Iklan, atau Setelan → Google → Iklan, tergantung ponsel Anda).</p>
+    <h2>Pembelian dalam game (Google Play)</h2><p>JarPop menawarkan paket koin, pembelian satu kali untuk menghapus iklan, dan langganan bulanan bernama JarPop Pro. Semua pembayaran diproses oleh Google Play. Kami tidak pernah melihat atau menyimpan nomor kartu Anda maupun data pembayaran lainnya; kami hanya menerima konfirmasi dari Google bahwa pembelian telah dilakukan agar kami dapat memberikan item yang Anda beli. Anda dapat mengelola atau membatalkan langganan di aplikasi Google Play (Profil → Pembayaran &amp; langganan → Langganan). Data pembelian diatur oleh <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Pemberitahuan Privasi Google Payments</a>.</p>
+    <h2>Dasar hukum (GDPR)</h2><ul><li><strong>Iklan yang dipersonalisasi:</strong> persetujuan Anda, yang dapat Anda tarik kapan saja.</li><li><strong>Iklan yang tidak dipersonalisasi dan pengukuran dasar:</strong> kepentingan sah kami untuk menjaga game tetap gratis.</li><li><strong>Pembelian:</strong> pelaksanaan kontrak pembelian yang Anda buat dengan kami melalui Google Play.</li></ul>
+    <h2>Hak Anda</h2><p>Jika Anda tinggal di Uni Eropa, Inggris, atau tempat lain dengan undang-undang serupa, Anda berhak mengakses data Anda, memperbaikinya, meminta penghapusannya, menolak pemrosesannya, meminta portabilitasnya, dan menarik persetujuan Anda. Karena kami tidak menyimpan data pribadi Anda di server kami sendiri:</p><ul><li>Untuk menghapus data game, uninstal game atau hapus datanya dari pengaturan Android.</li><li>Untuk menarik atau mengubah persetujuan iklan, gunakan opsi privasi di Pengaturan dalam game.</li><li>Untuk data yang diproses oleh Google AdMob atau Google Play, Anda dapat menggunakan hak Anda langsung kepada Google melalui <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Akun Google Anda</a>.</li></ul><p>Untuk permintaan lainnya, kirim email ke <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> dan kami akan membalas paling lambat dalam 30 hari. Anda juga berhak mengajukan keluhan kepada otoritas perlindungan data di negara Anda.</p>
+    <h2>Transfer internasional</h2><p>Google dapat memproses data iklan dan pembelian di server yang berada di luar negara Anda, termasuk Amerika Serikat, dengan perlindungan yang diwajibkan oleh hukum, seperti Klausul Kontrak Standar Komisi Eropa.</p>
+    <h2>Anak-anak</h2><p>JarPop tidak ditujukan untuk anak di bawah 13 tahun, dan kami tidak dengan sengaja mengumpulkan data anak pada usia tersebut. Di Uni Eropa, anak di bawah 16 tahun (atau usia yang ditetapkan setiap negara) memerlukan izin orang tua atau wali untuk menyetujui iklan yang dipersonalisasi. Jika Anda yakin seorang anak telah memberikan data kepada kami, hubungi kami dan kami akan menghapusnya.</p>
+    <h2>Keamanan</h2><p>Informasi game tetap berada di perangkat Anda, dan data yang diproses oleh Google dilindungi oleh langkah keamanan Google sendiri. Kami menyarankan Anda selalu memperbarui ponsel dan melindunginya dengan kunci layar.</p>
+    <h2>Perubahan kebijakan ini</h2><p>Jika kami mengubah kebijakan ini, kami akan memublikasikan versi baru di halaman ini dan memperbarui tanggal di bagian atas. Jika perubahannya penting, kami juga akan memberi tahu Anda di dalam game.</p>
+    <h2>Kontak</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-tr" lang="tr" hidden>
+    <p class="summary"><strong>Kısaca:</strong> JarPop sizden hesap oluşturmanızı istemez ve kişisel verilerinizi kendi sunucularımızda saklamaz. İlerlemeniz yalnızca telefonunuzda kaydedilir. Reklamlar Google AdMob tarafından gösterilir, satın almalar ise Google Play tarafından işlenir.</p>
+    <h2>Sorumlu kişi</h2><p>JarPop, bağımsız geliştirici Oscar Sanchez (SoyOskarSanchez) tarafından geliştirilen bir Android oyunudur. Bu politika hakkındaki her türlü sorunuz için <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> adresine yazabilirsiniz.</p>
+    <h2>Cihazınızda saklanan veriler</h2><p>Oyundaki ilerlemeniz, paralarınız, canlarınız ve ayarlarınız (örneğin dil ve ses) yalnızca telefonunuzun yerel depolama alanında saklanır. Bu bilgileri almayız ve bunlara erişimimiz yoktur. Oyunu kaldırırsanız veya verilerini Android ayarlarından silerseniz bu bilgiler tamamen silinir ve geri getirilemez.</p>
+    <h2>Reklamlar (Google AdMob)</h2><p>JarPop, Google LLC’nin bir hizmeti olan Google AdMob aracılığıyla geçiş reklamları (tam ekran) ve ödüllü reklamlar (bir ödül karşılığında izlemeyi kendiniz seçtiğiniz reklamlar) gösterir. Reklamları göstermek ve ölçmek için Google şu gibi verileri otomatik olarak toplayabilir:</p><ul><li>Cihazınızın reklam kimliği (Android Reklam Kimliği).</li><li>IP adresiniz ve buna dayalı yaklaşık konumunuz.</li><li>Model, işletim sistemi ve dil gibi cihaza ait teknik bilgiler.</li><li>Reklamlarla etkileşimler, örneğin hangi reklamların görüntülendiği veya dokunulduğu.</li></ul><p>Google bu verileri kendi politikalarına göre işler: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a> ve <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google’ın, hizmetlerini kullanan uygulamalardan gelen bilgileri nasıl kullandığı</a>.</p>
+    <h2>Avrupa ve Birleşik Krallık’ta onay</h2><p>Avrupa Ekonomik Alanı’nda, Birleşik Krallık’ta veya İsviçre’de bulunuyorsanız, oyunu ilk açtığınızda Google’ın bir onay formunu (UMP) görürsünüz. Burada kişiselleştirilmiş reklamlara izin verip vermeyeceğinizi ya da yalnızca kişiselleştirilmemiş reklamları seçeceğinizi belirlersiniz. Siz yanıt vermeden hiçbir reklam yüklenmez. Seçiminizi istediğiniz zaman oyunun Ayarlar bölümündeki gizlilik seçeneğinden değiştirebilirsiniz.</p><p>Reklam kimliğinizi Android ayarlarından da sıfırlayabilir veya silebilirsiniz (telefonunuza göre Ayarlar → Gizlilik → Reklamlar veya Ayarlar → Google → Reklamlar).</p>
+    <h2>Oyun içi satın almalar (Google Play)</h2><p>JarPop; para paketleri, reklamları kaldırmak için tek seferlik bir satın alma ve JarPop Pro adlı aylık bir abonelik sunar. Tüm ödemeler Google Play tarafından işlenir. Kart numaranızı veya diğer ödeme bilgilerinizi asla görmez ve saklamayız; satın aldığınız şeyi size teslim edebilmek için Google’dan yalnızca satın almanın gerçekleştiğine dair onay alırız. Aboneliği Google Play uygulamasından yönetebilir veya iptal edebilirsiniz (Profil → Ödemeler ve abonelikler → Abonelikler). Satın alma verileri <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google Payments Gizlilik Bildirimi</a>’ne tabidir.</p>
+    <h2>Hukuki dayanak (GDPR)</h2><ul><li><strong>Kişiselleştirilmiş reklamlar:</strong> istediğiniz zaman geri çekebileceğiniz onayınız.</li><li><strong>Kişiselleştirilmemiş reklamlar ve temel ölçüm:</strong> oyunu ücretsiz tutmaya yönelik meşru menfaatimiz.</li><li><strong>Satın almalar:</strong> Google Play üzerinden bizimle yaptığınız satın alma sözleşmesinin ifası.</li></ul>
+    <h2>Haklarınız</h2><p>Avrupa Birliği’nde, Birleşik Krallık’ta veya benzer yasalara sahip başka bir yerde yaşıyorsanız verilerinize erişme, bunları düzeltme, silinmesini isteme, işlenmesine itiraz etme, taşınabilirliğini talep etme ve onayınızı geri çekme hakkına sahipsiniz. Kişisel verilerinizi kendi sunucularımızda saklamadığımız için:</p><ul><li>Oyun verilerinizi silmek için oyunu kaldırın veya verilerini Android ayarlarından silin.</li><li>Reklam onayınızı geri çekmek veya değiştirmek için oyunun Ayarlar bölümündeki gizlilik seçeneğini kullanın.</li><li>Google AdMob veya Google Play tarafından işlenen veriler için haklarınızı doğrudan Google’a <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Hesabınız</a> üzerinden kullanabilirsiniz.</li></ul><p>Diğer talepleriniz için <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> adresine yazın; en geç 30 gün içinde yanıt veririz. Ayrıca ülkenizdeki veri koruma otoritesine şikâyette bulunma hakkınız da vardır.</p>
+    <h2>Uluslararası aktarımlar</h2><p>Google, reklam ve satın alma verilerini Amerika Birleşik Devletleri dahil ülkeniz dışındaki sunucularda, Avrupa Komisyonu’nun Standart Sözleşme Maddeleri gibi yasanın gerektirdiği güvencelerle işleyebilir.</p>
+    <h2>Çocuklar</h2><p>JarPop 13 yaşından küçük çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek veri toplamayız. Avrupa Birliği’nde 16 yaşından (veya her ülkenin belirlediği yaştan) küçük olanların kişiselleştirilmiş reklamlara izin vermesi için ebeveyn veya vasi izni gerekir. Bir çocuğun bize veri verdiğini düşünüyorsanız bize yazın, verileri sileriz.</p>
+    <h2>Güvenlik</h2><p>Oyun bilgileri cihazınızda kalır ve Google tarafından işlenen veriler Google’ın kendi güvenlik önlemleriyle korunur. Telefonunuzu güncel tutmanızı ve ekran kilidiyle korumanızı öneririz.</p>
+    <h2>Bu politikadaki değişiklikler</h2><p>Bu politikayı değiştirirsek yeni sürümü bu sayfada yayımlar ve üstteki tarihi güncelleriz. Değişiklik önemliyse oyun içinde de bildiririz.</p>
+    <h2>İletişim</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-hi" lang="hi" hidden>
+    <p class="summary"><strong>संक्षेप में:</strong> JarPop आपसे खाता बनाने के लिए नहीं कहता और आपका निजी डेटा हमारे अपने सर्वर पर संग्रहीत नहीं करता। आपकी प्रगति केवल आपके फ़ोन पर सहेजी जाती है। विज्ञापन Google AdMob द्वारा दिखाए जाते हैं और खरीदारी Google Play द्वारा प्रोसेस की जाती है।</p>
+    <h2>ज़िम्मेदार कौन है</h2><p>JarPop एक Android गेम है, जिसे स्वतंत्र डेवलपर Oscar Sanchez (SoyOskarSanchez) ने बनाया है। इस नीति के बारे में किसी भी प्रश्न के लिए <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> पर लिखें।</p>
+    <h2>आपके डिवाइस पर संग्रहीत डेटा</h2><p>गेम में आपकी प्रगति, सिक्के, लाइफ़ और सेटिंग्स (जैसे भाषा और साउंड) केवल आपके फ़ोन की लोकल स्टोरेज में सहेजी जाती हैं। हमें यह जानकारी नहीं मिलती और न ही हमारे पास इसकी पहुँच होती है। यदि आप गेम अनइंस्टॉल करते हैं या Android सेटिंग्स से इसका डेटा मिटाते हैं, तो यह जानकारी पूरी तरह हट जाती है और वापस नहीं लाई जा सकती।</p>
+    <h2>विज्ञापन (Google AdMob)</h2><p>JarPop, Google LLC की सेवा Google AdMob के माध्यम से इंटरस्टीशियल (फ़ुल-स्क्रीन) विज्ञापन और रिवॉर्ड वाले विज्ञापन (जिन्हें आप इनाम के बदले देखना चुनते हैं) दिखाता है। विज्ञापन दिखाने और उन्हें मापने के लिए Google अपने-आप इस तरह का डेटा एकत्र कर सकता है:</p><ul><li>आपके डिवाइस का विज्ञापन आइडेंटिफ़ायर (Android विज्ञापन ID)।</li><li>आपका IP पता और उससे अनुमानित लगभग स्थान।</li><li>डिवाइस की तकनीकी जानकारी, जैसे मॉडल, ऑपरेटिंग सिस्टम और भाषा।</li><li>विज्ञापनों के साथ इंटरैक्शन, जैसे कौन-से विज्ञापन देखे गए या टैप किए गए।</li></ul><p>Google इस डेटा को अपनी नीतियों के अनुसार प्रोसेस करता है: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google की निजता नीति</a> और <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google अपनी सेवाओं का उपयोग करने वाले ऐप्स की जानकारी का उपयोग कैसे करता है</a>।</p>
+    <h2>यूरोप और यूनाइटेड किंगडम में सहमति</h2><p>यदि आप यूरोपीय आर्थिक क्षेत्र, यूनाइटेड किंगडम या स्विट्ज़रलैंड में हैं, तो पहली बार गेम खोलने पर आपको Google का सहमति फ़ॉर्म (UMP) दिखेगा। वहाँ आप तय करते हैं कि व्यक्तिगत विज्ञापनों की अनुमति देनी है या केवल गैर-व्यक्तिगत विज्ञापन देखने हैं। आपके जवाब देने से पहले कोई विज्ञापन लोड नहीं होता। आप गेम की सेटिंग्स में मौजूद गोपनीयता विकल्प से किसी भी समय अपनी पसंद बदल सकते हैं।</p><p>आप Android सेटिंग्स से भी अपना विज्ञापन ID रीसेट या डिलीट कर सकते हैं (आपके फ़ोन के अनुसार सेटिंग्स → निजता → विज्ञापन, या सेटिंग्स → Google → विज्ञापन)।</p>
+    <h2>गेम में खरीदारी (Google Play)</h2><p>JarPop में सिक्कों के पैक, विज्ञापन हटाने के लिए एक बार की खरीदारी और JarPop Pro नाम की मासिक सदस्यता उपलब्ध है। सभी भुगतान Google Play द्वारा प्रोसेस किए जाते हैं। हम कभी भी आपका कार्ड नंबर या अन्य भुगतान जानकारी नहीं देखते और न ही संग्रहीत करते हैं; आपने जो खरीदा है वह आपको देने के लिए हमें Google से केवल यह पुष्टि मिलती है कि खरीदारी पूरी हो गई है। आप Google Play ऐप में सदस्यता प्रबंधित या रद्द कर सकते हैं (प्रोफ़ाइल → भुगतान और सदस्यताएँ → सदस्यताएँ)। खरीदारी का डेटा <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">Google Payments निजता सूचना</a> के तहत आता है।</p>
+    <h2>कानूनी आधार (GDPR)</h2><ul><li><strong>व्यक्तिगत विज्ञापन:</strong> आपकी सहमति, जिसे आप किसी भी समय वापस ले सकते हैं।</li><li><strong>गैर-व्यक्तिगत विज्ञापन और बुनियादी माप:</strong> गेम को मुफ़्त बनाए रखने में हमारा वैध हित।</li><li><strong>खरीदारी:</strong> Google Play के ज़रिए हमारे साथ किए गए खरीद अनुबंध का पालन।</li></ul>
+    <h2>आपके अधिकार</h2><p>यदि आप यूरोपीय संघ, यूनाइटेड किंगडम या समान कानूनों वाले किसी अन्य स्थान पर रहते हैं, तो आपको अपने डेटा तक पहुँचने, उसे सुधारने, उसे मिटाने का अनुरोध करने, उसकी प्रोसेसिंग पर आपत्ति करने, उसकी पोर्टेबिलिटी माँगने और अपनी सहमति वापस लेने का अधिकार है। चूँकि हम आपका निजी डेटा अपने सर्वर पर संग्रहीत नहीं करते:</p><ul><li>गेम का डेटा मिटाने के लिए गेम अनइंस्टॉल करें या Android सेटिंग्स से उसका डेटा मिटाएँ।</li><li>विज्ञापन सहमति वापस लेने या बदलने के लिए गेम की सेटिंग्स में गोपनीयता विकल्प का उपयोग करें।</li><li>Google AdMob या Google Play द्वारा प्रोसेस किए गए डेटा के लिए आप <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">अपने Google खाते</a> में सीधे Google के पास अपने अधिकारों का उपयोग कर सकते हैं।</li></ul><p>किसी अन्य अनुरोध के लिए <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> पर लिखें; हम अधिकतम 30 दिनों में जवाब देंगे। आपको अपने देश के डेटा सुरक्षा प्राधिकरण में शिकायत दर्ज करने का भी अधिकार है।</p>
+    <h2>अंतरराष्ट्रीय डेटा ट्रांसफ़र</h2><p>Google विज्ञापन और खरीदारी के डेटा को आपके देश के बाहर, जिसमें संयुक्त राज्य अमेरिका भी शामिल है, स्थित सर्वरों पर कानून द्वारा आवश्यक सुरक्षा उपायों के साथ प्रोसेस कर सकता है, जैसे यूरोपीय आयोग के मानक संविदात्मक खंड।</p>
+    <h2>बच्चे</h2><p>JarPop 13 वर्ष से कम उम्र के बच्चों के लिए नहीं है, और हम जान-बूझकर इस उम्र के बच्चों का डेटा एकत्र नहीं करते। यूरोपीय संघ में 16 वर्ष से कम (या हर देश द्वारा तय उम्र से कम) के नाबालिगों को व्यक्तिगत विज्ञापनों की अनुमति देने के लिए माता-पिता या अभिभावक की अनुमति चाहिए। यदि आपको लगता है कि किसी बच्चे ने हमें डेटा दिया है, तो हमें लिखें और हम उसे मिटा देंगे।</p>
+    <h2>सुरक्षा</h2><p>गेम की जानकारी आपके डिवाइस पर ही रहती है, और Google द्वारा प्रोसेस किया गया डेटा Google के अपने सुरक्षा उपायों से सुरक्षित रहता है। हम सलाह देते हैं कि अपना फ़ोन अपडेट रखें और स्क्रीन लॉक से सुरक्षित रखें।</p>
+    <h2>इस नीति में बदलाव</h2><p>यदि हम इस नीति में बदलाव करते हैं, तो नया संस्करण इसी पेज पर प्रकाशित करेंगे और ऊपर दी गई तारीख अपडेट करेंगे। यदि बदलाव महत्वपूर्ण है, तो हम आपको गेम के अंदर भी सूचित करेंगे।</p>
+    <h2>संपर्क</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <main id="m-ar" lang="ar" dir="rtl" hidden>
+    <p class="summary"><strong>باختصار:</strong> لا يطلب منك JarPop إنشاء حساب، ولا يخزّن بياناتك الشخصية على خوادم خاصة بنا. يُحفظ تقدّمك على هاتفك فقط. تُعرض الإعلانات عبر Google AdMob، وتُعالَج عمليات الشراء عبر Google Play.</p>
+    <h2>الجهة المسؤولة</h2><p>JarPop لعبة لنظام Android طوّرها المطوّر المستقل Oscar Sanchez ‏(SoyOskarSanchez). لأي استفسار حول هذه السياسة، راسلنا على <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+    <h2>البيانات المحفوظة على جهازك</h2><p>يُحفظ تقدّمك في اللعبة والعملات والأرواح والإعدادات (مثل اللغة والصوت) في وحدة التخزين المحلية لهاتفك فقط. لا نتلقى هذه المعلومات ولا يمكننا الوصول إليها. إذا ألغيت تثبيت اللعبة أو مسحت بياناتها من إعدادات Android، فستُحذف هذه المعلومات نهائيًا ولا يمكن استرجاعها.</p>
+    <h2>الإعلانات (Google AdMob)</h2><p>يعرض JarPop إعلانات بينية (بملء الشاشة) وإعلانات بمكافأة (تختار مشاهدتها مقابل الحصول على مكافأة) عبر Google AdMob، وهي خدمة تابعة لشركة Google LLC. لعرض الإعلانات وقياس أدائها، قد تجمع Google تلقائيًا بيانات مثل:</p><ul><li>معرّف الإعلانات الخاص بجهازك (معرّف إعلانات Android).</li><li>عنوان IP الخاص بك وموقع تقريبي مستنتج منه.</li><li>معلومات تقنية عن الجهاز، مثل الطراز ونظام التشغيل واللغة.</li><li>تفاعلاتك مع الإعلانات، مثل الإعلانات التي شوهدت أو نُقر عليها.</li></ul><p>تعالج Google هذه البيانات وفقًا لسياساتها الخاصة: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">سياسة الخصوصية لدى Google</a> و<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">كيفية استخدام Google للمعلومات من التطبيقات التي تستخدم خدماتها</a>.</p>
+    <h2>الموافقة في أوروبا والمملكة المتحدة</h2><p>إذا كنت في المنطقة الاقتصادية الأوروبية أو المملكة المتحدة أو سويسرا، فسترى عند فتح اللعبة لأول مرة نموذج موافقة من Google ‏(UMP). تختار فيه ما إذا كنت تسمح بالإعلانات المخصّصة أو بالإعلانات غير المخصّصة فقط. لا يُحمَّل أي إعلان قبل أن تجيب. يمكنك تغيير اختيارك في أي وقت من خيار الخصوصية في إعدادات اللعبة.</p><p>يمكنك أيضًا إعادة ضبط معرّف الإعلانات أو حذفه من إعدادات Android ‏(الإعدادات ← الخصوصية ← الإعلانات، أو الإعدادات ← Google ← الإعلانات، حسب هاتفك).</p>
+    <h2>عمليات الشراء داخل اللعبة (Google Play)</h2><p>يقدّم JarPop حزم عملات، وعملية شراء لمرة واحدة لإزالة الإعلانات، واشتراكًا شهريًا باسم JarPop Pro. تُعالَج جميع المدفوعات عبر Google Play. لا نرى رقم بطاقتك أو أي بيانات دفع أخرى ولا نحتفظ بها أبدًا؛ نتلقى من Google فقط تأكيدًا بإتمام الشراء حتى نتمكن من تسليمك ما اشتريته. يمكنك إدارة الاشتراك أو إلغاؤه من تطبيق Google Play ‏(الملف الشخصي ← الدفعات والاشتراكات ← الاشتراكات). تخضع بيانات الشراء إلى <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&amp;ldt=privacynotice" target="_blank" rel="noopener">إشعار الخصوصية الخاص بـ Google Payments</a>.</p>
+    <h2>الأساس القانوني (GDPR)</h2><ul><li><strong>الإعلانات المخصّصة:</strong> موافقتك، ويمكنك سحبها في أي وقت.</li><li><strong>الإعلانات غير المخصّصة والقياس الأساسي:</strong> مصلحتنا المشروعة في إبقاء اللعبة مجانية.</li><li><strong>عمليات الشراء:</strong> تنفيذ عقد الشراء الذي تبرمه معنا عبر Google Play.</li></ul>
+    <h2>حقوقك</h2><p>إذا كنت تقيم في الاتحاد الأوروبي أو المملكة المتحدة أو أي مكان آخر لديه قوانين مماثلة، فلك الحق في الوصول إلى بياناتك وتصحيحها وطلب حذفها والاعتراض على معالجتها وطلب نقلها وسحب موافقتك. وبما أننا لا نخزّن بياناتك الشخصية على خوادم خاصة بنا:</p><ul><li>لحذف بيانات اللعبة، ألغِ تثبيتها أو امسح بياناتها من إعدادات Android.</li><li>لسحب موافقتك على الإعلانات أو تغييرها، استخدم خيار الخصوصية في إعدادات اللعبة.</li><li>بالنسبة إلى البيانات التي تعالجها Google AdMob أو Google Play، يمكنك ممارسة حقوقك مباشرةً لدى Google من خلال <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">حسابك على Google</a>.</li></ul><p>لأي طلب آخر، راسلنا على <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> وسنرد خلال 30 يومًا كحد أقصى. ولك أيضًا الحق في تقديم شكوى إلى هيئة حماية البيانات في بلدك.</p>
+    <h2>النقل الدولي للبيانات</h2><p>قد تعالج Google بيانات الإعلانات والشراء على خوادم تقع خارج بلدك، بما في ذلك الولايات المتحدة، مع الضمانات التي يفرضها القانون، مثل البنود التعاقدية القياسية للمفوضية الأوروبية.</p>
+    <h2>القاصرون</h2><p>JarPop غير موجّه للأطفال دون 13 عامًا، ولا نجمع عن علم بيانات أطفال في هذا العمر. في الاتحاد الأوروبي، يحتاج القاصرون دون 16 عامًا (أو السن التي يحددها كل بلد) إلى إذن أحد الوالدين أو الوصي للموافقة على الإعلانات المخصّصة. إذا كنت تعتقد أن طفلًا قدّم لنا بيانات، فراسلنا وسنحذفها.</p>
+    <h2>الأمان</h2><p>تبقى معلومات اللعبة على جهازك، والبيانات التي تعالجها Google محمية بإجراءات الأمان الخاصة بـ Google. ننصحك بإبقاء هاتفك محدّثًا ومحميًا بقفل الشاشة.</p>
+    <h2>التغييرات على هذه السياسة</h2><p>إذا غيّرنا هذه السياسة، فسننشر النسخة الجديدة في هذه الصفحة ونحدّث التاريخ في الأعلى. وإذا كان التغيير مهمًا، فسنخبرك أيضًا داخل اللعبة.</p>
+    <h2>التواصل</h2><p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+  <footer><p>© 2026 Oscar Sanchez · JarPop</p></footer>
 </div>
-
 <script>
   (function () {
-    var buttons = document.querySelectorAll('.lang button');
+    var HEADS = {"en": ["Privacy Policy", "JarPop · Last updated: November 22, 2026"], "es": ["Política de Privacidad", "JarPop · Última actualización: 22 de noviembre de 2026"], "pt": ["Política de Privacidade", "JarPop · Última atualização: 22 de novembro de 2026"], "fr": ["Politique de confidentialité", "JarPop · Dernière mise à jour : 22 novembre 2026"], "de": ["Datenschutzerklärung", "JarPop · Zuletzt aktualisiert: 22. November 2026"], "it": ["Informativa sulla privacy", "JarPop · Ultimo aggiornamento: 22 novembre 2026"], "ja": ["プライバシーポリシー", "JarPop ・ 最終更新日：2026年11月22日"], "ko": ["개인정보처리방침", "JarPop · 최종 업데이트: 2026년 11월 22일"], "zh-CN": ["隐私政策", "JarPop · 最后更新：2026年11月22日"], "zh-TW": ["隱私權政策", "JarPop · 最後更新：2026年11月22日"], "ru": ["Политика конфиденциальности", "JarPop · Последнее обновление: 22 ноября 2026 г."], "id": ["Kebijakan Privasi", "JarPop · Terakhir diperbarui: 22 November 2026"], "tr": ["Gizlilik Politikası", "JarPop · Son güncelleme: 22 Kasım 2026"], "hi": ["गोपनीयता नीति", "JarPop · अंतिम अपडेट: 22 नवंबर 2026"], "ar": ["سياسة الخصوصية", "JarPop · آخر تحديث: 22 نوفمبر 2026"]};
+    var CODES = Object.keys(HEADS);
+    var sel = document.getElementById('langSel');
     function setLang(lang) {
-      document.getElementById('es').hidden = lang !== 'es';
-      document.getElementById('en').hidden = lang !== 'en';
+      CODES.forEach(function (c) { document.getElementById('m-' + c).hidden = c !== lang; });
       document.documentElement.lang = lang;
-      document.querySelectorAll('[data-es]').forEach(function (el) {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-      buttons.forEach(function (b) {
-        b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false');
-      });
-      document.title = lang === 'es' ? 'JarPop · Política de Privacidad' : 'JarPop · Privacy Policy';
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('t').textContent = HEADS[lang][0];
+      document.getElementById('u').textContent = HEADS[lang][1];
+      document.title = 'JarPop · ' + HEADS[lang][0];
+      sel.value = lang;
       try { localStorage.setItem('jarpop-lang', lang); } catch (e) {}
     }
-    buttons.forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.getAttribute('data-set')); });
-    });
-    var params = new URLSearchParams(location.search);
-    var chosen = params.get('lang');
-    if (chosen !== 'es' && chosen !== 'en') {
-      try { chosen = localStorage.getItem('jarpop-lang'); } catch (e) { chosen = null; }
+    function match(tag) {
+      if (!tag) return null;
+      tag = String(tag).toLowerCase();
+      if (tag.indexOf('zh') === 0) {
+        return /(tw|hk|mo|hant)/.test(tag) ? 'zh-TW' : 'zh-CN';
+      }
+      var base = tag.split('-')[0];
+      return CODES.indexOf(base) >= 0 ? base : null;
     }
-    if (chosen !== 'es' && chosen !== 'en') {
-      chosen = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    sel.addEventListener('change', function () { setLang(sel.value); });
+    var chosen = match(new URLSearchParams(location.search).get('lang'));
+    if (!chosen) { try { chosen = match(localStorage.getItem('jarpop-lang')); } catch (e) {} }
+    if (!chosen) {
+      var prefs = navigator.languages || [navigator.language];
+      for (var i = 0; i < prefs.length && !chosen; i++) chosen = match(prefs[i]);
     }
-    setLang(chosen);
+    setLang(chosen || 'en');
   })();
 </script>
 </body>
