@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JarPop · Colorful physics puzzles</title>
+<meta name="description" content="A colorful physics puzzle game for Android. Every piece moves, bounces and settles like a real object.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1d2540; --ink-soft: #4a5370; --bg: #f3f7fc; --paper: #ffffff; --line: #d9e2ef; --glass: #cfe3f7;
+    --berry: #e23d6d; --lime: #7cc63e; --sky: #2f8fe0; --sun: #f5b82e; --grape: #8a52d6;
+    --body-font: "Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+    --head-font: "Baloo 2", "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8ecf6; --ink-soft: #aab3cc; --bg: #141a2b; --paper: #1c2337; --line: #2e3854; --glass: #2b3a57; }
+  }
+  html:is([lang="ja"],[lang="ko"],[lang="zh-CN"],[lang="zh-TW"],[lang="ru"],[lang="hi"],[lang="ar"]) {
+    --body-font: system-ui, "Segoe UI", "Noto Sans", Roboto, sans-serif;
+    --head-font: system-ui, "Segoe UI", "Noto Sans", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body-font); font-size: 1.0625rem; line-height: 1.65; }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 0 1.25rem; }
+  .bar { display: flex; justify-content: flex-end; padding: 1.25rem 0 0; }
+  select {
+    font: 700 .95rem system-ui, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--paper);
+    border: 2px solid var(--line); border-radius: 999px; padding: .45rem 1rem; cursor: pointer;
+  }
+  select:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .hero { display: grid; gap: 1.5rem; align-items: center; padding: 1.5rem 0 3rem; }
+  @media (min-width: 760px) { .jar { width: min(100%, 20rem); } .hero { grid-template-columns: 1.2fr 1fr; padding: 2.5rem 0 4rem; } }
+  h1 { font-family: "Baloo 2", "Segoe UI", sans-serif; font-weight: 800; font-size: clamp(3.5rem, 13vw, 6.5rem); line-height: .95; margin: 0; letter-spacing: -.02em; }
+  .tagline { font-size: clamp(1.15rem, 2.6vw, 1.35rem); color: var(--ink-soft); max-width: 32rem; margin: 1rem 0 1.5rem; }
+  .soon { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; background: var(--ink); color: var(--bg);
+    border-radius: 999px; padding: .6rem 1.2rem; }
+  .soon svg { width: 1.1rem; height: 1.1rem; }
+
+  .jar { width: min(60%, 20rem); margin: 0 auto; display: block; }
+  .jar .glass { fill: var(--glass); fill-opacity: .45; stroke: var(--ink); stroke-width: 5; }
+  .jar .lid { fill: var(--ink); }
+  .jar .ball { stroke: rgba(0,0,0,.15); stroke-width: 2; }
+  @media (prefers-reduced-motion: no-preference) {
+    .jar .ball { animation: fall .9s cubic-bezier(.35,1.45,.55,1) both; }
+    .jar .ball:nth-of-type(2) { animation-delay: .12s; }
+    .jar .ball:nth-of-type(3) { animation-delay: .24s; }
+    .jar .ball:nth-of-type(4) { animation-delay: .36s; }
+    .jar .ball:nth-of-type(5) { animation-delay: .48s; }
+    .jar .ball:nth-of-type(6) { animation-delay: .6s; }
+    .jar .ball:nth-of-type(7) { animation-delay: .72s; }
+    @keyframes fall { from { transform: translateY(-260px); } to { transform: none; } }
+  }
+
+  h2 { font-family: var(--head-font); font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.15; margin: 0 0 1.5rem; }
+  .features { list-style: none; padding: 0; margin: 0 0 3.5rem; display: grid; gap: 1.5rem 2.5rem; }
+  @media (min-width: 760px) { .features { grid-template-columns: 1fr 1fr; } }
+  .features li { display: flex; gap: 1rem; align-items: flex-start; }
+  .features h3 { font-family: var(--head-font); font-size: 1.25rem; font-weight: 800; margin: 0 0 .15rem; line-height: 1.25; }
+  .features p { margin: 0; color: var(--ink-soft); }
+  .dot { flex: none; width: 2rem; height: 2rem; border-radius: 50%; margin-top: .1rem;
+    box-shadow: inset -4px -5px 0 rgba(0,0,0,.18), inset 4px 4px 0 rgba(255,255,255,.35); }
+  .d0 { background: var(--berry); } .d1 { background: var(--sun); } .d2 { background: var(--lime); }
+  .d3 { background: var(--sky); } .d4 { background: var(--grape); }
+
+  .support { background: var(--paper); border: 1px solid var(--line); border-radius: 1.5rem; padding: 1.75rem; margin-bottom: 2.5rem; }
+  @media (min-width: 640px) { .support { padding: 2.25rem 2.5rem; } }
+  .support h2 { margin-bottom: .5rem; }
+  .support p { margin: 0; max-width: 38rem; }
+  a { color: var(--sky); text-decoration-thickness: 2px; text-underline-offset: 2px; overflow-wrap: anywhere; font-weight: 700; }
+  footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; color: var(--ink-soft); font-size: .95rem;
+    border-top: 1px solid var(--line); padding: 1.25rem 0 2.5rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <label class="sr" for="langSel">Language</label>
+    <select id="langSel">
+          <option value="en" lang="en">English</option>
+          <option value="es" lang="es">Español</option>
+          <option value="pt" lang="pt">Português</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="it" lang="it">Italiano</option>
+          <option value="ja" lang="ja">日本語</option>
+          <option value="ko" lang="ko">한국어</option>
+          <option value="zh-CN" lang="zh-CN">简体中文</option>
+          <option value="zh-TW" lang="zh-TW">繁體中文</option>
+          <option value="ru" lang="ru">Русский</option>
+          <option value="id" lang="id">Bahasa Indonesia</option>
+          <option value="tr" lang="tr">Türkçe</option>
+          <option value="hi" lang="hi">हिन्दी</option>
+          <option value="ar" lang="ar">العربية</option>
+    </select>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>JarPop</h1>
+      <p class="tagline" id="tagline">A colorful physics puzzle game for Android. Every piece moves, bounces and settles like a real object.</p>
+      <span class="soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg><span id="soon">Coming soon to Google Play</span></span>
+    </div>
+    <svg class="jar" viewBox="0 0 240 300" role="img" aria-label="JarPop">
+      <rect class="lid" x="58" y="20" width="124" height="26" rx="8"/>
+      <path class="glass" d="M70 46h100v18c22 10 36 30 36 56v128c0 18-14 32-32 32H66c-18 0-32-14-32-32V120c0-26 14-46 36-56z"/>
+      <circle class="ball" cx="82" cy="244" r="28" fill="#e23d6d"/>
+      <circle class="ball" cx="142" cy="246" r="26" fill="#2f8fe0"/>
+      <circle class="ball" cx="186" cy="236" r="18" fill="#f5b82e"/>
+      <circle class="ball" cx="112" cy="196" r="24" fill="#7cc63e"/>
+      <circle class="ball" cx="66" cy="192" r="20" fill="#8a52d6"/>
+      <circle class="ball" cx="164" cy="196" r="22" fill="#e23d6d"/>
+      <circle class="ball" cx="130" cy="150" r="20" fill="#f5b82e"/>
+    </svg>
+  </header>
+
+  <main>
+    <section aria-labelledby="featH">
+      <h2 id="featH">What makes JarPop fun</h2>
+      <ul class="features" id="feats">
+        <li><span class="dot d0" aria-hidden="true"></span><div><h3>Real physics</h3><p>Pieces roll, bounce and settle on their own, so every level is a small puzzle to work out.</p></div></li>
+        <li><span class="dot d1" aria-hidden="true"></span><div><h3>Bright colors in 2.5D</h3><p>A clean, colorful look with depth that’s easy on the eyes.</p></div></li>
+        <li><span class="dot d2" aria-hidden="true"></span><div><h3>No account needed</h3><p>Your progress, coins and settings are saved right on your phone.</p></div></li>
+        <li><span class="dot d3" aria-hidden="true"></span><div><h3>Free to play</h3><p>Play for free with ads, or pick up coin packs, remove ads with a single purchase, or join JarPop Pro.</p></div></li>
+        <li><span class="dot d4" aria-hidden="true"></span><div><h3>15 languages</h3><p>Play in your own language, from Spanish to Japanese.</p></div></li>
+      </ul>
+    </section>
+
+    <section class="support" aria-labelledby="supH">
+      <h2 id="supH">Help and support</h2>
+      <p id="supP">Questions, ideas or a problem in the game? Write to <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> and we’ll get back to you.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a id="privLink" href="privacy.html">Privacy Policy</a>
+    <span id="by">Made by Oscar Sanchez (SoyOskarSanchez)</span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var T = {"en": {"name": "English", "pageTitle": "JarPop · Colorful physics puzzles", "tagline": "A colorful physics puzzle game for Android. Every piece moves, bounces and settles like a real object.", "soon": "Coming soon to Google Play", "featH": "What makes JarPop fun", "feats": [["Real physics", "Pieces roll, bounce and settle on their own, so every level is a small puzzle to work out."], ["Bright colors in 2.5D", "A clean, colorful look with depth that’s easy on the eyes."], ["No account needed", "Your progress, coins and settings are saved right on your phone."], ["Free to play", "Play for free with ads, or pick up coin packs, remove ads with a single purchase, or join JarPop Pro."], ["15 languages", "Play in your own language, from Spanish to Japanese."]], "supportH": "Help and support", "supportP": "Questions, ideas or a problem in the game? Write to {EMAIL} and we’ll get back to you.", "privacy": "Privacy Policy", "by": "Made by Oscar Sanchez (SoyOskarSanchez)"}, "es": {"name": "Español", "pageTitle": "JarPop · Rompecabezas de física y colores", "tagline": "Un juego de rompecabezas de física y colores para Android. Cada pieza se mueve, rebota y se acomoda como un objeto real.", "soon": "Muy pronto en Google Play", "featH": "Lo que hace divertido a JarPop", "feats": [["Física real", "Las piezas ruedan, rebotan y se acomodan solas, así que cada nivel es un pequeño acertijo por resolver."], ["Colores brillantes en 2.5D", "Un estilo limpio y colorido, con profundidad y fácil de ver."], ["Sin crear cuenta", "Tu progreso, monedas y configuración se guardan en tu propio teléfono."], ["Gratis para jugar", "Juega gratis con anuncios, o consigue paquetes de monedas, quita los anuncios con una sola compra o únete a JarPop Pro."], ["15 idiomas", "Juega en tu idioma, del español al japonés."]], "supportH": "Ayuda y soporte", "supportP": "¿Tienes dudas, ideas o un problema en el juego? Escribe a {EMAIL} y te responderemos.", "privacy": "Política de Privacidad", "by": "Hecho por Oscar Sanchez (SoyOskarSanchez)"}, "pt": {"name": "Português", "pageTitle": "JarPop · Quebra-cabeças com física e cores", "tagline": "Um jogo de quebra-cabeça com física e cores para Android. Cada peça se move, quica e se acomoda como um objeto de verdade.", "soon": "Em breve no Google Play", "featH": "O que torna o JarPop divertido", "feats": [["Física de verdade", "As peças rolam, quicam e se acomodam sozinhas, então cada fase é um pequeno desafio para resolver."], ["Cores vivas em 2.5D", "Um visual limpo e colorido, com profundidade e agradável aos olhos."], ["Sem precisar de conta", "Seu progresso, moedas e configurações ficam salvos no seu próprio celular."], ["Grátis para jogar", "Jogue de graça com anúncios ou adquira pacotes de moedas, remova os anúncios com uma única compra ou assine o JarPop Pro."], ["15 idiomas", "Jogue no seu idioma, do português ao japonês."]], "supportH": "Ajuda e suporte", "supportP": "Tem dúvidas, ideias ou algum problema no jogo? Escreva para {EMAIL} e responderemos.", "privacy": "Política de Privacidade", "by": "Feito por Oscar Sanchez (SoyOskarSanchez)"}, "fr": {"name": "Français", "pageTitle": "JarPop · Casse-têtes colorés et physique", "tagline": "Un jeu de réflexion coloré basé sur la physique, pour Android. Chaque élément bouge, rebondit et se pose comme un vrai objet.", "soon": "Bientôt sur Google Play", "featH": "Ce qui rend JarPop amusant", "feats": [["Une vraie physique", "Les éléments roulent, rebondissent et se placent tout seuls : chaque niveau est une petite énigme à résoudre."], ["Des couleurs vives en 2.5D", "Un style net et coloré, avec de la profondeur et agréable à regarder."], ["Aucun compte requis", "Votre progression, vos pièces et vos réglages sont enregistrés directement sur votre téléphone."], ["Gratuit", "Jouez gratuitement avec des publicités, ou prenez des packs de pièces, supprimez les publicités en un seul achat ou rejoignez JarPop Pro."], ["15 langues", "Jouez dans votre langue, du français au japonais."]], "supportH": "Aide et assistance", "supportP": "Des questions, des idées ou un problème dans le jeu ? Écrivez à {EMAIL} et nous vous répondrons.", "privacy": "Politique de confidentialité", "by": "Créé par Oscar Sanchez (SoyOskarSanchez)"}, "de": {"name": "Deutsch", "pageTitle": "JarPop · Bunte Physik-Puzzles", "tagline": "Ein buntes Physik-Puzzlespiel für Android. Jedes Teil bewegt sich, prallt ab und kommt zur Ruhe wie ein echter Gegenstand.", "soon": "Bald bei Google Play", "featH": "Was JarPop so unterhaltsam macht", "feats": [["Echte Physik", "Die Teile rollen, prallen ab und kommen von selbst zur Ruhe – so wird jedes Level zu einem kleinen Rätsel."], ["Leuchtende Farben in 2.5D", "Ein klarer, farbenfroher Look mit Tiefe, der angenehm fürs Auge ist."], ["Kein Konto nötig", "Dein Fortschritt, deine Münzen und Einstellungen werden direkt auf deinem Handy gespeichert."], ["Kostenlos spielbar", "Spiele kostenlos mit Werbung oder hol dir Münzpakete, entferne die Werbung mit einem einmaligen Kauf oder werde Mitglied bei JarPop Pro."], ["15 Sprachen", "Spiele in deiner Sprache, von Deutsch bis Japanisch."]], "supportH": "Hilfe und Support", "supportP": "Fragen, Ideen oder ein Problem im Spiel? Schreib an {EMAIL}, wir melden uns bei dir.", "privacy": "Datenschutzerklärung", "by": "Entwickelt von Oscar Sanchez (SoyOskarSanchez)"}, "it": {"name": "Italiano", "pageTitle": "JarPop · Rompicapi colorati con la fisica", "tagline": "Un gioco rompicapo colorato basato sulla fisica, per Android. Ogni pezzo si muove, rimbalza e si sistema come un oggetto reale.", "soon": "Presto su Google Play", "featH": "Cosa rende JarPop divertente", "feats": [["Fisica reale", "I pezzi rotolano, rimbalzano e si sistemano da soli, così ogni livello è un piccolo enigma da risolvere."], ["Colori vivaci in 2.5D", "Uno stile pulito e colorato, con profondità e piacevole da guardare."], ["Nessun account", "I tuoi progressi, le monete e le impostazioni vengono salvati direttamente sul tuo telefono."], ["Gratis", "Gioca gratis con gli annunci, oppure prendi pacchetti di monete, rimuovi gli annunci con un unico acquisto o abbonati a JarPop Pro."], ["15 lingue", "Gioca nella tua lingua, dall’italiano al giapponese."]], "supportH": "Aiuto e assistenza", "supportP": "Domande, idee o un problema nel gioco? Scrivi a {EMAIL} e ti risponderemo.", "privacy": "Informativa sulla privacy", "by": "Creato da Oscar Sanchez (SoyOskarSanchez)"}, "ja": {"name": "日本語", "pageTitle": "JarPop ・ カラフルな物理パズル", "tagline": "Android向けのカラフルな物理パズルゲーム。ピースは本物の物体のように動き、跳ね、ぴたりと収まります。", "soon": "Google Playで近日公開", "featH": "JarPopの楽しさ", "feats": [["本格的な物理演算", "ピースが自然に転がり、跳ねて、収まります。どのレベルも解きがいのある小さなパズルです。"], ["2.5Dの鮮やかな色", "奥行きのある、すっきりとカラフルで見やすいデザイン。"], ["アカウント不要", "進行状況、コイン、設定はお使いのスマートフォンに直接保存されます。"], ["基本プレイ無料", "広告付きで無料で遊べます。コインパックの購入、買い切りでの広告非表示、JarPop Proへの登録も選べます。"], ["15言語に対応", "日本語をはじめ、お好きな言語でプレイできます。"]], "supportH": "ヘルプとサポート", "supportP": "ご質問やご意見、ゲームの不具合などがありましたら、{EMAIL} までご連絡ください。", "privacy": "プライバシーポリシー", "by": "開発：Oscar Sanchez（SoyOskarSanchez）"}, "ko": {"name": "한국어", "pageTitle": "JarPop · 컬러풀한 물리 퍼즐", "tagline": "Android용 컬러풀한 물리 퍼즐 게임. 모든 조각이 실제 물체처럼 움직이고, 튕기고, 자리를 잡습니다.", "soon": "Google Play 출시 예정", "featH": "JarPop이 재미있는 이유", "feats": [["진짜 같은 물리", "조각이 스스로 구르고 튕기며 자리를 잡기 때문에 모든 레벨이 풀어 볼 만한 작은 퍼즐이 됩니다."], ["2.5D의 선명한 색감", "깊이감이 있으면서도 깔끔하고 눈이 편안한 컬러풀한 디자인."], ["계정 불필요", "진행 상황, 코인, 설정은 휴대폰에 바로 저장됩니다."], ["무료 플레이", "광고와 함께 무료로 즐기거나, 코인 팩 구매, 한 번의 구매로 광고 제거, JarPop Pro 가입 중에서 선택할 수 있습니다."], ["15개 언어", "한국어를 포함해 원하는 언어로 플레이하세요."]], "supportH": "도움말 및 지원", "supportP": "질문이나 아이디어가 있거나 게임에 문제가 있나요? {EMAIL}(으)로 연락해 주시면 답변드리겠습니다.", "privacy": "개인정보처리방침", "by": "개발: Oscar Sanchez(SoyOskarSanchez)"}, "zh-CN": {"name": "简体中文", "pageTitle": "JarPop · 多彩物理益智游戏", "tagline": "一款面向 Android 的多彩物理益智游戏。每个元素都会像真实物体一样移动、弹跳并稳稳落定。", "soon": "即将登陆 Google Play", "featH": "JarPop 的乐趣所在", "feats": [["真实物理", "元素会自行滚动、弹跳并落定，每一关都是一个等你破解的小谜题。"], ["2.5D 缤纷色彩", "简洁多彩、富有层次感的画面，看起来轻松舒适。"], ["无需账户", "您的进度、金币和设置直接保存在您的手机上。"], ["免费畅玩", "可在有广告的情况下免费游玩，也可以购买金币礼包、一次性去除广告或加入 JarPop Pro。"], ["15 种语言", "用您熟悉的语言畅玩，从中文到西班牙语。"]], "supportH": "帮助与支持", "supportP": "有疑问、建议或在游戏中遇到问题？请发送邮件至 {EMAIL}，我们会尽快回复您。", "privacy": "隐私政策", "by": "开发者：Oscar Sanchez（SoyOskarSanchez）"}, "zh-TW": {"name": "繁體中文", "pageTitle": "JarPop · 繽紛物理益智遊戲", "tagline": "一款專為 Android 打造的繽紛物理益智遊戲。每個元素都會像真實物體一樣移動、彈跳並穩穩落定。", "soon": "即將登上 Google Play", "featH": "JarPop 的樂趣所在", "feats": [["真實物理", "元素會自行滾動、彈跳並落定，每一關都是等你破解的小謎題。"], ["2.5D 繽紛色彩", "簡潔多彩、富有層次感的畫面，看起來輕鬆舒適。"], ["無需帳戶", "您的進度、金幣和設定直接儲存在您的手機上。"], ["免費暢玩", "可在有廣告的情況下免費遊玩，也可以購買金幣包、一次性移除廣告或加入 JarPop Pro。"], ["15 種語言", "用您熟悉的語言暢玩，從中文到西班牙文。"]], "supportH": "說明與支援", "supportP": "有疑問、建議或在遊戲中遇到問題嗎？請寄信至 {EMAIL}，我們會盡快回覆您。", "privacy": "隱私權政策", "by": "開發者：Oscar Sanchez（SoyOskarSanchez）"}, "ru": {"name": "Русский", "pageTitle": "JarPop · Красочные физические головоломки", "tagline": "Красочная физическая головоломка для Android. Каждый элемент движется, отскакивает и останавливается, как настоящий предмет.", "soon": "Скоро в Google Play", "featH": "Чем хорош JarPop", "feats": [["Настоящая физика", "Элементы сами катятся, отскакивают и замирают, поэтому каждый уровень — это маленькая задачка."], ["Яркие цвета в 2.5D", "Чистый, красочный стиль с ощущением глубины, приятный для глаз."], ["Без аккаунта", "Ваш прогресс, монеты и настройки сохраняются прямо на телефоне."], ["Бесплатная игра", "Играйте бесплатно с рекламой или покупайте наборы монет, отключите рекламу разовой покупкой либо оформите JarPop Pro."], ["15 языков", "Играйте на своём языке — от русского до японского."]], "supportH": "Помощь и поддержка", "supportP": "Есть вопросы, идеи или проблема в игре? Напишите на {EMAIL}, и мы вам ответим.", "privacy": "Политика конфиденциальности", "by": "Разработчик: Oscar Sanchez (SoyOskarSanchez)"}, "id": {"name": "Bahasa Indonesia", "pageTitle": "JarPop · Puzzle fisika penuh warna", "tagline": "Game puzzle fisika penuh warna untuk Android. Setiap kepingan bergerak, memantul, dan berhenti seperti benda sungguhan.", "soon": "Segera hadir di Google Play", "featH": "Yang membuat JarPop seru", "feats": [["Fisika nyata", "Kepingan menggelinding, memantul, dan berhenti sendiri, jadi setiap level adalah teka-teki kecil untuk dipecahkan."], ["Warna cerah dalam 2.5D", "Tampilan bersih dan penuh warna, dengan kedalaman yang nyaman dilihat."], ["Tanpa akun", "Progres, koin, dan pengaturan Anda disimpan langsung di ponsel Anda."], ["Gratis dimainkan", "Main gratis dengan iklan, atau beli paket koin, hapus iklan dengan sekali beli, atau bergabung dengan JarPop Pro."], ["15 bahasa", "Mainkan dalam bahasa Anda sendiri, dari bahasa Indonesia hingga Jepang."]], "supportH": "Bantuan dan dukungan", "supportP": "Ada pertanyaan, ide, atau masalah di dalam game? Kirim email ke {EMAIL} dan kami akan membalasnya.", "privacy": "Kebijakan Privasi", "by": "Dibuat oleh Oscar Sanchez (SoyOskarSanchez)"}, "tr": {"name": "Türkçe", "pageTitle": "JarPop · Rengârenk fizik bulmacaları", "tagline": "Android için rengârenk bir fizik bulmaca oyunu. Her parça gerçek bir nesne gibi hareket eder, zıplar ve yerine oturur.", "soon": "Çok yakında Google Play’de", "featH": "JarPop’u eğlenceli yapan ne?", "feats": [["Gerçek fizik", "Parçalar kendi kendine yuvarlanır, zıplar ve durur; böylece her seviye çözülmeyi bekleyen küçük bir bulmacadır."], ["2.5D’de canlı renkler", "Derinliği olan, sade, renkli ve göz yormayan bir görünüm."], ["Hesap gerekmez", "İlerlemeniz, paralarınız ve ayarlarınız doğrudan telefonunuza kaydedilir."], ["Ücretsiz oyna", "Reklamlarla ücretsiz oynayın; isterseniz para paketleri alın, reklamları tek seferlik bir satın almayla kaldırın veya JarPop Pro’ya katılın."], ["15 dil", "Türkçeden Japoncaya, kendi dilinizde oynayın."]], "supportH": "Yardım ve destek", "supportP": "Sorunuz, fikriniz veya oyunda bir sorununuz mu var? {EMAIL} adresine yazın, size dönüş yapalım.", "privacy": "Gizlilik Politikası", "by": "Geliştiren: Oscar Sanchez (SoyOskarSanchez)"}, "hi": {"name": "हिन्दी", "pageTitle": "JarPop · रंगीन फ़िज़िक्स पहेलियाँ", "tagline": "Android के लिए एक रंगीन फ़िज़िक्स पहेली गेम। हर टुकड़ा किसी असली चीज़ की तरह चलता, उछलता और अपनी जगह टिकता है।", "soon": "जल्द ही Google Play पर", "featH": "JarPop को मज़ेदार क्या बनाता है", "feats": [["असली फ़िज़िक्स", "टुकड़े अपने-आप लुढ़कते, उछलते और टिकते हैं, इसलिए हर लेवल सुलझाने लायक एक छोटी पहेली है।"], ["2.5D में चटकीले रंग", "गहराई वाला साफ़-सुथरा, रंगीन लुक, जो आँखों को सुकून देता है।"], ["खाते की ज़रूरत नहीं", "आपकी प्रगति, सिक्के और सेटिंग्स सीधे आपके फ़ोन पर सहेजे जाते हैं।"], ["मुफ़्त में खेलें", "विज्ञापनों के साथ मुफ़्त खेलें, या सिक्कों के पैक लें, एक बार की खरीदारी से विज्ञापन हटाएँ या JarPop Pro से जुड़ें।"], ["15 भाषाएँ", "हिन्दी से लेकर जापानी तक, अपनी भाषा में खेलें।"]], "supportH": "मदद और सहायता", "supportP": "कोई सवाल, सुझाव या गेम में कोई समस्या है? {EMAIL} पर लिखें, हम आपको जवाब देंगे।", "privacy": "गोपनीयता नीति", "by": "डेवलपर: Oscar Sanchez (SoyOskarSanchez)"}, "ar": {"name": "العربية", "pageTitle": "JarPop · ألغاز فيزيائية ملوّنة", "tagline": "لعبة ألغاز فيزيائية ملوّنة لنظام Android. كل قطعة تتحرك وترتد وتستقر مثل جسم حقيقي.", "soon": "قريبًا على Google Play", "featH": "ما الذي يجعل JarPop ممتعة", "feats": [["فيزياء حقيقية", "تتدحرج القطع وترتد وتستقر من تلقاء نفسها، لذا فكل مستوى لغز صغير ينتظر الحل."], ["ألوان زاهية بتقنية 2.5D", "مظهر نظيف وملوّن بعمق مريح للعين."], ["لا حاجة إلى حساب", "يُحفظ تقدّمك وعملاتك وإعداداتك مباشرةً على هاتفك."], ["مجانية اللعب", "العب مجانًا مع الإعلانات، أو اشترِ حزم العملات، أو أزل الإعلانات بعملية شراء واحدة، أو انضم إلى JarPop Pro."], ["15 لغة", "العب بلغتك، من العربية إلى اليابانية."]], "supportH": "المساعدة والدعم", "supportP": "لديك سؤال أو فكرة أو مشكلة في اللعبة؟ راسلنا على {EMAIL} وسنرد عليك.", "privacy": "سياسة الخصوصية", "by": "تطوير: Oscar Sanchez ‏(SoyOskarSanchez)"}};
+    var CODES = Object.keys(T);
+    var EMAIL = '<a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>';
+    var sel = document.getElementById('langSel');
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function setLang(lang) {
+      var t = T[lang];
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.title = t.pageTitle;
+      document.getElementById('tagline').textContent = t.tagline;
+      document.getElementById('soon').textContent = t.soon;
+      document.getElementById('featH').textContent = t.featH;
+      document.getElementById('feats').innerHTML = t.feats.map(function (f, i) {
+        return '<li><span class="dot d' + i + '" aria-hidden="true"></span><div><h3>' + esc(f[0]) + '</h3><p>' + esc(f[1]) + '</p></div></li>';
+      }).join('');
+      document.getElementById('supH').textContent = t.supportH;
+      document.getElementById('supP').innerHTML = esc(t.supportP).replace('{EMAIL}', EMAIL);
+      var p = document.getElementById('privLink');
+      p.textContent = t.privacy;
+      p.href = 'privacy.html?lang=' + lang;
+      document.getElementById('by').textContent = t.by;
+      sel.value = lang;
+      try { localStorage.setItem('jarpop-lang', lang); } catch (e) {}
+    }
+    function match(tag) {
+      if (!tag) return null;
+      tag = String(tag).toLowerCase();
+      if (tag.indexOf('zh') === 0) return /(tw|hk|mo|hant)/.test(tag) ? 'zh-TW' : 'zh-CN';
+      var base = tag.split('-')[0];
+      return CODES.indexOf(base) >= 0 ? base : null;
+    }
+    sel.addEventListener('change', function () { setLang(sel.value); });
+    var chosen = match(new URLSearchParams(location.search).get('lang'));
+    if (!chosen) { try { chosen = match(localStorage.getItem('jarpop-lang')); } catch (e) {} }
+    if (!chosen) {
+      var prefs = navigator.languages || [navigator.language];
+      for (var i = 0; i < prefs.length && !chosen; i++) chosen = match(prefs[i]);
+    }
+    setLang(chosen || 'en');
+  })();
+</script>
+</body>
+</html>
