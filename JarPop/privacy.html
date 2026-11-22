@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JarPop · Política de Privacidad / Privacy Policy</title>
+<meta name="description" content="Política de privacidad del juego JarPop para Android. Privacy policy for the JarPop Android game.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1d2540;
+    --ink-soft: #4a5370;
+    --bg: #f3f7fc;
+    --paper: #ffffff;
+    --line: #d9e2ef;
+    --berry: #e23d6d;
+    --lime: #7cc63e;
+    --sky: #2f8fe0;
+    --sun: #f5b82e;
+    --grape: #8a52d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8ecf6;
+      --ink-soft: #aab3cc;
+      --bg: #141a2b;
+      --paper: #1c2337;
+      --line: #2e3854;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Atkinson Hyperlegible", "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+  header { padding: 2.5rem 0 1.5rem; }
+  .marbles { display: flex; gap: .45rem; margin-bottom: 1.25rem; }
+  .marbles span {
+    width: 1.35rem; height: 1.35rem; border-radius: 50%;
+    box-shadow: inset -3px -4px 0 rgba(0,0,0,.18), inset 3px 3px 0 rgba(255,255,255,.35);
+  }
+  .marbles span:nth-child(1) { background: var(--berry); }
+  .marbles span:nth-child(2) { background: var(--sun); }
+  .marbles span:nth-child(3) { background: var(--lime); }
+  .marbles span:nth-child(4) { background: var(--sky); }
+  .marbles span:nth-child(5) { background: var(--grape); }
+  @media (prefers-reduced-motion: no-preference) {
+    .marbles span { animation: drop .5s cubic-bezier(.3,1.6,.5,1) both; }
+    .marbles span:nth-child(2) { animation-delay: .06s; }
+    .marbles span:nth-child(3) { animation-delay: .12s; }
+    .marbles span:nth-child(4) { animation-delay: .18s; }
+    .marbles span:nth-child(5) { animation-delay: .24s; }
+    @keyframes drop { from { transform: translateY(-2rem); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+  h1, h2 { font-family: "Baloo 2", "Segoe UI", sans-serif; line-height: 1.15; }
+  h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 800; margin: 0; }
+  .meta { color: var(--ink-soft); margin: .35rem 0 0; font-size: .95rem; }
+  .lang { display: inline-flex; border: 2px solid var(--line); border-radius: 999px; padding: 3px; background: var(--paper); }
+  .lang button {
+    font: inherit; font-weight: 700; font-size: .9rem;
+    border: 0; background: transparent; color: var(--ink-soft);
+    padding: .35rem .9rem; border-radius: 999px; cursor: pointer;
+  }
+  .lang button[aria-pressed="true"] { background: var(--sky); color: #fff; }
+  .lang button:focus-visible, a:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+  main { background: var(--paper); border: 1px solid var(--line); border-radius: 1.25rem; padding: 1.5rem 1.5rem 2rem; margin-bottom: 2rem; }
+  @media (min-width: 640px) { main { padding: 2rem 2.5rem 2.5rem; } }
+  .summary { border-left: 5px solid var(--lime); padding: .25rem 0 .25rem 1rem; margin: 0 0 1.5rem; }
+  h2 { font-size: 1.4rem; font-weight: 800; margin: 2rem 0 .5rem; }
+  h2:first-of-type { margin-top: .5rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .3rem 0; }
+  a { color: var(--sky); text-decoration-thickness: 2px; text-underline-offset: 2px; }
+  footer { color: var(--ink-soft); font-size: .9rem; padding-bottom: 2.5rem; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="marbles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="top">
+      <div>
+        <h1 data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
+        <p class="meta" data-es="JarPop · Última actualización: 22 de noviembre de 2026" data-en="JarPop · Last updated: November 22, 2026">JarPop · Última actualización: 22 de noviembre de 2026</p>
+      </div>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set="es" aria-pressed="true">Español</button>
+        <button type="button" data-set="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== ESPAÑOL ===================== -->
+  <main id="es" lang="es">
+    <p class="summary"><strong>En resumen:</strong> JarPop no te pide crear una cuenta y no guarda tus datos personales en servidores propios. Tu progreso se guarda solo en tu teléfono. Los anuncios los muestra Google AdMob y las compras las procesa Google Play.</p>
+
+    <h2>Quién es el responsable</h2>
+    <p>JarPop es un juego para Android desarrollado por Oscar Sanchez (SoyOskarSanchez), desarrollador independiente. Para cualquier duda sobre esta política puedes escribir a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+
+    <h2>Datos que se guardan en tu dispositivo</h2>
+    <p>Tu progreso en el juego, monedas, vidas y configuración (por ejemplo, idioma y sonido) se guardan únicamente en el almacenamiento local de tu teléfono. Nosotros no recibimos ni tenemos acceso a esa información. Si desinstalas el juego o borras sus datos desde los ajustes de Android, esa información se elimina por completo y no se puede recuperar.</p>
+
+    <h2>Publicidad (Google AdMob)</h2>
+    <p>JarPop muestra anuncios intersticiales (de pantalla completa) y anuncios recompensados (que eliges ver a cambio de un premio) mediante Google AdMob, un servicio de Google LLC. Para mostrar y medir los anuncios, Google puede recopilar automáticamente datos como:</p>
+    <ul>
+      <li>El identificador de publicidad de tu dispositivo (ID de publicidad de Android).</li>
+      <li>Tu dirección IP y una ubicación aproximada derivada de ella.</li>
+      <li>Información técnica del dispositivo, como modelo, sistema operativo e idioma.</li>
+      <li>Interacciones con los anuncios, como cuáles se vieron o tocaron.</li>
+    </ul>
+    <p>Estos datos los trata Google según su propia política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a> y <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cómo usa Google la información de las apps que usan sus servicios</a>.</p>
+
+    <h2>Consentimiento en Europa y Reino Unido</h2>
+    <p>Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, la primera vez que abras el juego verás un formulario de consentimiento de Google (UMP). Ahí decides si aceptas anuncios personalizados o solo anuncios no personalizados. No se cargan anuncios antes de que respondas. Puedes cambiar tu decisión en cualquier momento desde la opción de privacidad en Ajustes dentro del juego.</p>
+    <p>También puedes restablecer o eliminar tu ID de publicidad desde los ajustes de Android (Configuración → Privacidad → Anuncios, o Configuración → Google → Anuncios, según tu teléfono).</p>
+
+    <h2>Compras dentro del juego (Google Play)</h2>
+    <p>JarPop ofrece paquetes de monedas, una compra única para quitar los anuncios y una suscripción mensual llamada JarPop Pro. Todos los pagos los procesa Google Play. Nosotros nunca vemos ni guardamos tu número de tarjeta ni otros datos de pago; solo recibimos de Google la confirmación de que la compra se realizó, para poder entregarte lo que compraste. Puedes administrar o cancelar la suscripción desde la app de Google Play (Perfil → Pagos y suscripciones → Suscripciones). Los datos de la compra se rigen por las <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">condiciones de privacidad de Google Payments</a>.</p>
+
+    <h2>Base legal (RGPD)</h2>
+    <ul>
+      <li><strong>Anuncios personalizados:</strong> tu consentimiento, que puedes retirar en cualquier momento.</li>
+      <li><strong>Anuncios no personalizados y medición básica:</strong> el interés legítimo de mantener el juego gratuito.</li>
+      <li><strong>Compras:</strong> la ejecución del contrato de compra que haces con nosotros a través de Google Play.</li>
+    </ul>
+
+    <h2>Tus derechos</h2>
+    <p>Si vives en la Unión Europea, el Reino Unido u otro lugar con leyes similares, tienes derecho a acceder a tus datos, corregirlos, pedir que se eliminen, oponerte a su tratamiento, pedir su portabilidad y retirar tu consentimiento. Como nosotros no guardamos datos personales tuyos en servidores propios:</p>
+    <ul>
+      <li>Para borrar tus datos del juego, desinstálalo o borra sus datos desde los ajustes de Android.</li>
+      <li>Para retirar o cambiar tu consentimiento de anuncios, usa la opción de privacidad en Ajustes del juego.</li>
+      <li>Para los datos que tratan Google AdMob o Google Play, puedes ejercer tus derechos directamente con Google en <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.</li>
+    </ul>
+    <p>Si tienes otra solicitud, escríbenos a <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> y te responderemos en un plazo máximo de 30 días. También tienes derecho a presentar una reclamación ante la autoridad de protección de datos de tu país.</p>
+
+    <h2>Transferencias internacionales</h2>
+    <p>Google puede tratar los datos de anuncios y compras en servidores ubicados fuera de tu país, incluido Estados Unidos, con las garantías que exige la ley, como las cláusulas contractuales tipo de la Comisión Europea.</p>
+
+    <h2>Menores de edad</h2>
+    <p>JarPop no está dirigido a menores de 13 años y no recopilamos a sabiendas datos de menores de esa edad. En la Unión Europea, los menores de 16 años (o de la edad que fije cada país) necesitan el permiso de su madre, padre o tutor para aceptar anuncios personalizados. Si crees que un menor nos ha proporcionado datos, escríbenos y los eliminaremos.</p>
+
+    <h2>Seguridad</h2>
+    <p>La información del juego permanece en tu dispositivo y la que trata Google está protegida por sus propias medidas de seguridad. Te recomendamos mantener tu teléfono actualizado y protegido con bloqueo de pantalla.</p>
+
+    <h2>Cambios a esta política</h2>
+    <p>Si cambiamos esta política, publicaremos la nueva versión en esta misma página y actualizaremos la fecha de arriba. Si el cambio es importante, también lo avisaremos dentro del juego.</p>
+
+    <h2>Contacto</h2>
+    <p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <main id="en" lang="en" hidden>
+    <p class="summary"><strong>In short:</strong> JarPop doesn’t ask you to create an account and doesn’t store your personal data on our own servers. Your progress is saved only on your phone. Ads are served by Google AdMob and purchases are processed by Google Play.</p>
+
+    <h2>Who is responsible</h2>
+    <p>JarPop is an Android game developed by Oscar Sanchez (SoyOskarSanchez), an independent developer. For any question about this policy, write to <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a>.</p>
+
+    <h2>Data stored on your device</h2>
+    <p>Your game progress, coins, lives and settings (for example, language and sound) are stored only in your phone’s local storage. We don’t receive or have access to that information. If you uninstall the game or clear its data from Android settings, that information is deleted completely and can’t be recovered.</p>
+
+    <h2>Advertising (Google AdMob)</h2>
+    <p>JarPop shows interstitial (full-screen) ads and rewarded ads (which you choose to watch in exchange for a reward) through Google AdMob, a service of Google LLC. To serve and measure ads, Google may automatically collect data such as:</p>
+    <ul>
+      <li>Your device’s advertising identifier (Android Advertising ID).</li>
+      <li>Your IP address and an approximate location derived from it.</li>
+      <li>Technical device information, such as model, operating system and language.</li>
+      <li>Ad interactions, such as which ads were viewed or tapped.</li>
+    </ul>
+    <p>Google processes this data under its own policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
+
+    <h2>Consent in Europe and the UK</h2>
+    <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the first time you open the game you’ll see a Google consent form (UMP). There you choose whether to allow personalized ads or only non-personalized ads. No ads load before you answer. You can change your choice at any time from the privacy option in the game’s Settings.</p>
+    <p>You can also reset or delete your advertising ID from Android settings (Settings → Privacy → Ads, or Settings → Google → Ads, depending on your phone).</p>
+
+    <h2>In-game purchases (Google Play)</h2>
+    <p>JarPop offers coin packs, a one-time purchase to remove ads, and a monthly subscription called JarPop Pro. All payments are processed by Google Play. We never see or store your card number or other payment details; we only receive confirmation from Google that the purchase was made, so we can deliver what you bought. You can manage or cancel the subscription in the Google Play app (Profile → Payments &amp; subscriptions → Subscriptions). Purchase data is governed by the <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">Google Payments Privacy Notice</a>.</p>
+
+    <h2>Legal basis (GDPR)</h2>
+    <ul>
+      <li><strong>Personalized ads:</strong> your consent, which you can withdraw at any time.</li>
+      <li><strong>Non-personalized ads and basic measurement:</strong> our legitimate interest in keeping the game free.</li>
+      <li><strong>Purchases:</strong> performance of the purchase contract you make with us through Google Play.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>If you live in the European Union, the United Kingdom or another place with similar laws, you have the right to access, correct and delete your data, to object to its processing, to data portability, and to withdraw your consent. Because we don’t store your personal data on our own servers:</p>
+    <ul>
+      <li>To delete your game data, uninstall the game or clear its data from Android settings.</li>
+      <li>To withdraw or change your ad consent, use the privacy option in the game’s Settings.</li>
+      <li>For data processed by Google AdMob or Google Play, you can exercise your rights directly with Google in <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">your Google Account</a>.</li>
+    </ul>
+    <p>For any other request, email <a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a> and we’ll reply within 30 days. You also have the right to lodge a complaint with the data protection authority in your country.</p>
+
+    <h2>International transfers</h2>
+    <p>Google may process ad and purchase data on servers outside your country, including the United States, with the safeguards required by law, such as the European Commission’s Standard Contractual Clauses.</p>
+
+    <h2>Children</h2>
+    <p>JarPop is not directed to children under 13, and we don’t knowingly collect data from children under that age. In the European Union, minors under 16 (or the age set by each country) need permission from a parent or guardian to allow personalized ads. If you believe a child has given us data, write to us and we’ll delete it.</p>
+
+    <h2>Security</h2>
+    <p>Game information stays on your device, and the data processed by Google is protected by Google’s own security measures. We recommend keeping your phone updated and protected with a screen lock.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If we change this policy, we’ll post the new version on this page and update the date at the top. If the change is significant, we’ll also let you know inside the game.</p>
+
+    <h2>Contact</h2>
+    <p>Oscar Sanchez (SoyOskarSanchez)<br><a href="mailto:jesusoscar76@gmail.com">jesusoscar76@gmail.com</a></p>
+  </main>
+
+  <footer>
+    <p>© 2026 Oscar Sanchez · JarPop</p>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang button');
+    function setLang(lang) {
+      document.getElementById('es').hidden = lang !== 'es';
+      document.getElementById('en').hidden = lang !== 'en';
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-es]').forEach(function (el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', b.getAttribute('data-set') === lang ? 'true' : 'false');
+      });
+      document.title = lang === 'es' ? 'JarPop · Política de Privacidad' : 'JarPop · Privacy Policy';
+      try { localStorage.setItem('jarpop-lang', lang); } catch (e) {}
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.getAttribute('data-set')); });
+    });
+    var params = new URLSearchParams(location.search);
+    var chosen = params.get('lang');
+    if (chosen !== 'es' && chosen !== 'en') {
+      try { chosen = localStorage.getItem('jarpop-lang'); } catch (e) { chosen = null; }
+    }
+    if (chosen !== 'es' && chosen !== 'en') {
+      chosen = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    }
+    setLang(chosen);
+  })();
+</script>
+</body>
+</html>
